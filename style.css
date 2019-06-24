@@ -3,3 +3,9 @@ body {
     direction: rtl;
     text-align: right;
 }
+
+.landing-img{
+    height: 500px;
+    padding-top: 150px;
+    background-image: url("../Images/The window.jpg");
+}
