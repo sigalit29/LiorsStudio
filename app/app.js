@@ -1,2 +1,2 @@
 
-var app = angular.module("recipeBookApp", []);
+var app = angular.module("yogaStudio", []);
