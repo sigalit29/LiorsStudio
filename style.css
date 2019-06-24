@@ -1,0 +1,5 @@
+/* לגרום לדף להיות מימין לשמאל בשביל העברית */
+body {
+    direction: rtl;
+    text-align: right;
+}
