@@ -6,11 +6,13 @@
   <link rel="shortcut icon" type="image/x-icon" href="Images/Hastudio_logo.ico">
   <!-- Required meta tags -->
   <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
-
+  <!-- Font in hebrew -->
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -22,10 +24,33 @@
 
 <body>
   <!-- Just an image -->
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
       <img src="../Images/Hastudio_logo.png" width="156" height="120" alt="logo">
     </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">המורים <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">השבוע בסטודיו</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">סדנאות וקורסים</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">גלרית תמונות</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
   </nav>
 
   <ng-view></ng-view>

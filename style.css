@@ -9,3 +9,16 @@ body {
     padding-top: 150px;
     background-image: url("../Images/The window.jpg");
 }
+
+
+.nav-item{
+    font-family: 'Amatic SC', cursive;
+    font-size: 3em; 
+    font-weight: bold;
+    letter-spacing: 2.5px;
+}
+
+.navbar-nav > li{
+    padding-left:25px;
+    padding-right:25px;
+  }
