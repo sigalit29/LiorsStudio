@@ -8,13 +8,13 @@ app.controller("homeCtrl", function($scope, $location, $log) {
 
     $scope.login = function() {
 
-        userSrv.login($scope.email, $scope.pwd).then(function(activeUser) {
-            $log.info("Successful login with: " + JSON.stringify(activeUser));
-            $location.path("/userPage");
-          }, function(err) {
-            $scope.invalidLogin = true;
-        });
-
+        // userSrv.login($scope.email, $scope.pwd).then(function(activeUser) {
+        //     $log.info("Successful login with: " + JSON.stringify(activeUser));
+        //     $location.path("/userPage");
+        //   }, function(err) {
+        //     $scope.invalidLogin = true;
+        // });
+        $location.path("/userPage");
     }
 
     $scope.createAccount= function() {

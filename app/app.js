@@ -7,9 +7,8 @@ app.config(function($routeProvider) {
         templateUrl: "app/home/home.html",
         controller: "homeCtrl"
     }).when("/userPage", {
-
-    }).when("/recipes", {
-
+        templateUrl: "app/userPage/userPage.html",
+        controller: "userPageCtrl"
     }).when("/new", {
 
     })
