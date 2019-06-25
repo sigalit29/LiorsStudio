@@ -4,10 +4,9 @@ var app = angular.module("yogaStudio", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl: "app/home/home.html"
-    }).when("/login", {
-
-    }).when("/signup", {
+        templateUrl: "app/home/home.html",
+        controller: "homeCtrl"
+    }).when("/userPage", {
 
     }).when("/recipes", {
 
