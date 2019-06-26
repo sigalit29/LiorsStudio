@@ -6,8 +6,11 @@ body {
 }
 
 .landing-img {
-    padding-top: 40px;
-    background-image: url("../Images/LandingImage.jpg");
+    padding-top: 35px;
+    background-image: url("../Images/LandingImgOrigin.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-right: 3px;
 }
 
 .nav-item {
@@ -26,20 +29,18 @@ body {
     background-color: rgb(82, 77, 77);
     font-family: 'Amatic SC', cursive;
     /* font-family: 'Secular One', sans-serif; */
-    color: rgb(235, 210, 210);  
-    font-weight: bold;  
+    color: rgb(235, 210, 210);
+    font-weight: bold;
     letter-spacing: 1.5px;
-    padding-right: 15px;
-    padding-left: 15px;
-    height: 450px;
-    width: 350px;
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 500px;
+    width: 280px;
     font-size: 1.5em;
 }
 
-.direction-english{
+.direction-english {
     direction: ltr;
     text-align: left;
-    font-size: 1.0em;
+    /* font-size: 2em; */
 }
-
-
