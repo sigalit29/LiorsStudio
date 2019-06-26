@@ -9,7 +9,18 @@ app.config(function($routeProvider) {
     }).when("/userPage", {
         templateUrl: "app/userPage/userPage.html",
         controller: "userPageCtrl"
-    }).when("/new", {
-
+    }).when("/teachers", {
+        templateUrl: "app/teachers/teachers.html",
+        controller: "teachersCtrl"
+    }).when("/weeklyActivity", {
+        templateUrl: "app/weeklyActivity/weeklyActivity.html",
+        controller: "weeklyActivityCtrl"
+    }).when("/workshops", {
+        templateUrl: "app/workshops/workshops.html",
+        controller: "workshopsCtrl"
+    }).when("/photoGallery", {
+        templateUrl: "app/photoGallery/photoGallery.html",
+        controller: "photoGalleryCtrl"
     })
 }) 
+
