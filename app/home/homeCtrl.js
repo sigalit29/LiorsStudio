@@ -1,4 +1,4 @@
-app.controller("homeCtrl", function($scope, $location, $log) {
+app.controller("homeCtrl", function ($scope, $location, $log, $uibModal) {
 
     $scope.invalidLogin = false;
     // $scope.email = "nir@nir.com";
@@ -6,7 +6,7 @@ app.controller("homeCtrl", function($scope, $location, $log) {
     $scope.email = "";
     $scope.pwd = "";
 
-    $scope.login = function() {
+    $scope.login = function () {
 
         // userSrv.login($scope.email, $scope.pwd).then(function(activeUser) {
         //     $log.info("Successful login with: " + JSON.stringify(activeUser));
@@ -15,10 +15,15 @@ app.controller("homeCtrl", function($scope, $location, $log) {
         //     $scope.invalidLogin = true;
         // });
         $location.path("/userPage");
-    }
+    };
 
-    $scope.createAccount= function() {
-        
-    }
 
-})
+    $scope.createAccount = function () {
+
+        var modalInstance = $uibModal.open({
+            templateUrl: "app/signUpModal/signUpModal.html",
+            controller: "signUpModalCtrl"
+        })
+    };
+
+});

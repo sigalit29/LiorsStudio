@@ -1,5 +1,5 @@
 
-var app = angular.module("yogaStudio", ["ngRoute"]);
+var app = angular.module("yogaStudio", ["ngRoute", "ngImageInputWithPreview", "ngAnimate", "ngTouch", "ui.bootstrap"]);
 
 app.config(function($routeProvider) {
     $routeProvider

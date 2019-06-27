@@ -11,6 +11,12 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
+
+  <!-- These are needed for UI Bootstrap (Bootstrap directives for AngularJS) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-animate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-touch.js"></script>
+  <script src="js/ui-bootstrap-tpls.js"></script>
+
   <!-- Font in hebrew -->
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 
@@ -19,6 +25,19 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css">
+ <!-- ng image with preview -->
+    <script src="js/ng-image-input-with-preview.js"></script>
+
+
+    <!-- Parse (Back4App) -->
+    <script src="node_modules/parse/dist/parse.min.js"></script>
+    <script>
+      Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
+      Parse.initialize(
+        'bPiipOdH63i5L5i8CnVJNv72hwa8ZLWsvMDxUuMN', // This is your Application ID
+        'tBsVpAtPAzqy8oJ6cfwj51lWrApdJt5I0KmGkOYo' // This is your Javascript key
+      );
+    </script>
 
   <script src="app/app.js"></script>
   <script src="app/home/homeCtrl.js"></script>
@@ -27,6 +46,7 @@
   <script src="app/weeklyActivity/weeklyActivity.js"></script>
   <script src="app/workshops/workshops.js"></script>
   <script src="app/photoGallery/photoGallery.js"></script>
+  <script src="app/signUpModal/signUpModal.js"></script>
 
 </head>
 
