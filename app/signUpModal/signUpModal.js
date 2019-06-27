@@ -3,6 +3,7 @@ app.controller("signUpModalCtrl", function ($scope, $location, $log, $uibModalIn
     $scope.animationsEnabled = true;
 
     $scope.ok = function () {
+        
         $uibModalInstance.close();
     };
 

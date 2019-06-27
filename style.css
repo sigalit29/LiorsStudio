@@ -35,7 +35,7 @@ body {
     letter-spacing: 1.5px;
     padding-right: 30px;
     padding-left: 30px;
-    height: 500px;
+    height: 100%;
     width: 280px;
     font-size: 1.5em;
 }
@@ -44,4 +44,9 @@ body {
     direction: ltr;
     text-align: left;
     /* font-size: 2em; */
+}
+
+.alert-danger{
+    background-color: crimson;
+    color: rgb(29, 22, 22);
 }

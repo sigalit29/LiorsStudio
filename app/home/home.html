@@ -1,18 +1,18 @@
 <div class="landing-img jumbotron">
     <div class="login">
         <h1>כניסה לאתר למשתמש רשום</h1>
-        <div class="alert alert-danger" role="alert" ng-show="invalidLogin">
+        <div class="direction-english alert alert-danger" role="alert" ng-show="invalidLogin">
             <strong>Invalid Login!</strong> incorrect email or password
         </div>
         <form>
             <div class="form-group  direction-english">
                 <label for="email">Email:</label>
-                <input type="email" class="ml-auto form-control" id="email" ng-model="email"
+                <input type="email" class="ml-auto form-control" ng-change= "newInputUser()" id="email" ng-model="email"
                     placeholder="Enter email address">
             </div>
             <div class="form-group direction-english">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" ng-model="pwd" placeholder="Enter password">
+                <input type="password" class="form-control" id="pwd" ng-change= "newInputUser()" ng-model="pwd" placeholder="Enter password">
             </div>
             <button type="button" class="btn btn-success btn-block" ng-click="login()">כניסה לאזור אישי</button>
         
