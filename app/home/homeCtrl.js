@@ -12,13 +12,13 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
 
     $scope.login = function () {
 
-        userSrv.login($scope.email, $scope.pwd).then(function(activeUser) {
+        userSrv.login($scope.email, $scope.pwd).then(function (activeUser) {
             $log.info("Successful login with: " + JSON.stringify(activeUser));
             $location.path("/userPage");
-          }, function(err) {
+        }, function (err) {
             $scope.invalidLogin = true;
         });
-       
+
     };
 
 
@@ -30,14 +30,6 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
         })
 
         modalInstance.result.then(function (newUser) {
-
-
-
-            $scope.email;
-            $scope.pwd ;
-            $scope.fname;
-            $scope.lmane;
-
             // this will wake in case the user added a new recipe
             $scope.users.push(newUser);
         }, function () {
@@ -46,10 +38,9 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
         })
     };
 
-$scope.newInputUser = function()
-{
-    $scope.invalidLogin = false;
-}
+    $scope.newInputUser = function () {
+        $scope.invalidLogin = false;
+    }
 
 
 });
