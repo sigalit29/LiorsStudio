@@ -4,12 +4,23 @@ app.factory("userSrv", function ($q) {
     var activeUser = null; // new User({id: 1, fname: "Nir" ...})
     var userIdCounter = 0;
 
-    function User(YogaStudent) {
-        this.id = YogaStudent.studentId;
-        this.fname = YogaStudent.get("studentFirstName");
-        this.lname = YogaStudent.get("studentLastName");
-        this.email = YogaStudent.get("emaistudentEmaill");
-    }   
+    // { User object in yogaStudio DB - Back4App
+    //     "objectId": "4BwpMWdCnm",
+    //     "username": "A string",
+    //     "email": "A string",
+    //     "fname": "A string",
+    //     "lname": "A string",
+    //     "password": "#Password123",
+    //   }
+
+    function User(user) {
+        this.usertId = user.id;
+        this.fullName = user.get("username");
+        this.fname = user.get("fname");
+        this.lname = user.get("lname");
+        this.email = user.get("email");
+    }
+
 
     function isLoggedIn() {
         return activeUser ? true : false;
@@ -21,10 +32,10 @@ app.factory("userSrv", function ($q) {
         var async = $q.defer();
 
         activeUser = null;
-       
+
 
         // Pass the username and password to logIn function
-        Parse.YogaStudent.logIn(email, pwd).then(function (user) {
+        Parse.User.logIn(email, pwd).then(function (user) {
             // Do stuff after successful login
             console.log('Logged in user', user);
             activeUser = new User(user);
@@ -45,30 +56,28 @@ app.factory("userSrv", function ($q) {
         return activeUser;
     }
 
-    function addNewUser(fname,lname,email,pwd){
+    function addNewUser(fname, lname, email, pwd) {
         var async = $q.defer();
+        var fullName = fname + ' ' + lname;
 
-        const YogaStudent = Parse.Object.extend('YogaStudent');
-        const myNewObject = new YogaStudent();
-        userIdCounter++;
-        myNewObject.set('studentId', userIdCounter);
-        myNewObject.set('studentFirstName', fname);
-        myNewObject.set('studentLastName', lname);
-        myNewObject.set('studentEmail', email);
-        myNewObject.set('password',pwd);
-    
-        myNewObject.save().then(
-            (result) => {
-                async.resolve(new User(result));
-                console.log('YogaStudent created', result);
-            },
-            (error) => {
-                console.error('Error while creating YogaStudent: ', error);
-                async.reject(error);
-            }
-        );
+        const user = new Parse.User()
+        user.set('username', fullName);
+        user.set('fname', fname);
+        user.set('lname', lname);
+        user.set('email', email);
+        user.set('password', pwd);
+
+        user.signUp().then((user) => {
+            activeUser = new User(user);
+            async.resolve(activeUser);
+            console.log('User signed up', user);
+        }).catch(error => {
+            console.error('Error while signing up user', error);
+            async.reject(error);
+        });
         return async.promise;
     }
+
 
     return {
         isLoggedIn: isLoggedIn,
@@ -78,4 +87,4 @@ app.factory("userSrv", function ($q) {
         addNewUser: addNewUser
     }
 
-    });
+});
