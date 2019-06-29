@@ -3,15 +3,20 @@
 body {
     direction: rtl;
     text-align: right;
+    font-family: 'Amatic SC', cursive;
 }
 
-.landing-img {
+.landing-img, .user-img {
     padding-top: 35px;
     margin-bottom: auto;
     background-image: url("../Images/LandingImgOrigin.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     padding-right: 3px;
+}
+
+.user-img{
+    background-image: url("../Images/P3010006.jpg");
 }
 
 .nav-item {
@@ -26,9 +31,9 @@ body {
     padding-right: 25px;
 }
 
-.login {
+.login{
     background-color: rgb(82, 77, 77);
-    font-family: 'Amatic SC', cursive;
+    
     /* font-family: 'Secular One', sans-serif; */
     color: rgb(235, 210, 210);
     font-weight: bold;
@@ -40,11 +45,18 @@ body {
     width: 280px;
     font-size: 1.5em;
 }
-.login >h1 {
+.login >h1, .user-page h1 {
     font-size: 1.2em;
     font-weight: 900;
+    color: rgb(235, 210, 210);      
 }
 
+.user-page h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    font-size: 1.6em;  
+}
 
 .direction-english {
     direction: ltr;
@@ -55,4 +67,5 @@ body {
 .alert-danger{
     background-color: crimson;
     color: rgb(29, 22, 22);
+    
 }

@@ -8,7 +8,11 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
     $scope.fname = "";
     $scope.lmane = "";
     $scope.users = [];
-
+   
+    /** If user is logged in Go to new page - user page on Home logo */
+    if($scope.invalidLogin == false){
+        //    $location.path("/userPage");
+    }
 
     $scope.login = function () {
 
@@ -17,6 +21,7 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
             $location.path("/userPage");
         }, function (err) {
             $scope.invalidLogin = true;
+            // scope.showLoginWindow = false;
         });
 
     };
