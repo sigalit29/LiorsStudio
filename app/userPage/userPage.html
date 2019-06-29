@@ -1,5 +1,12 @@
 <div class="user-page">
-    <div class="user-img jumbotron">
-        <h1> ברוכים הבאים לסטודיו של ליאור</h1>
+    <div class="user-img jumbotron" ng-model="userFname">
+        <h1> שלום {{userFname}} , הגעת לסטודיו של ליאור</h1>
+        <form>
+            <div class="form-group user-buttons">
+                <button type="button" class="btn btn-success btn-block" ng-click="">עדכון פרטים אישיים</button>
+                <hr>
+                <button type="button" class="btn btn-success btn-block" ng-click="">צפייה בכרטיסיה</button>
+        </form>
     </div>
+</div>
 </div>

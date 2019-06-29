@@ -33,7 +33,6 @@ app.factory("userSrv", function ($q) {
 
         activeUser = null;
 
-
         // Pass the username and password to logIn function
         Parse.User.logIn(email, pwd).then(function (user) {
             // Do stuff after successful login
