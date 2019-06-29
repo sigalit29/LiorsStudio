@@ -19,6 +19,11 @@ body {
     background-image: url("../Images/P3010006.jpg");
 }
 
+.weekly-img{
+    background-image: url("../Images/P3288273.jpg");
+    
+   }
+
 .nav-item {
     font-family: 'Amatic SC', cursive;
     font-size: 3em;
@@ -44,7 +49,7 @@ body {
     font-size: 1.5em;
 }
 
-.login>h1, .user-page h1 {
+.login>h1, .user-page h1{
     font-size: 1.2em;
     font-weight: 900;
     color: rgb(235, 210, 210);
