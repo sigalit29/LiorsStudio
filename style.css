@@ -36,6 +36,13 @@ body {
     padding-right: 25px;
 }
 
+h1 {
+    font-size: 2.2em;
+    font-weight: 900;
+    color: rgb(235, 210, 210);
+    text-align: center;
+}
+
 .login {
     background-color: rgb(82, 77, 77);
     color: rgb(235, 210, 210);
@@ -49,12 +56,9 @@ body {
     font-size: 1.5em;
 }
 
-.login>h1, .user-page h1{
-    font-size: 1.2em;
-    font-weight: 900;
-    color: rgb(235, 210, 210);
+.login h1{
+    font-size: 1.5em;
 }
-
 .user-page h1 {
     text-align: center;
     font-size: 3em;
