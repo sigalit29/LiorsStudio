@@ -1,16 +1,14 @@
 app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv) {
 
     $scope.invalidLogin = false;
-    // $scope.email = "nir@nir.com";
-    // $scope.pwd = "123";
+  
     $scope.email = "";
     $scope.pwd = "";
-    $scope.fname = "";
-    $scope.lmane = "";
+    
     $scope.users = [];
-   
+
     /** If user is logged in Go to new page - user page on Home logo */
-    if($scope.invalidLogin == false){
+    if ($scope.invalidLogin == false) {
         //    $location.path("/userPage");
     }
 
@@ -29,10 +27,14 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
 
     $scope.createAccount = function () {
 
+        $scope.email = "";
+        $scope.pwd = "";
+        
         var modalInstance = $uibModal.open({
             templateUrl: "app/signUpModal/signUpModal.html",
             controller: "signUpModalCtrl"
         })
+
 
         modalInstance.result.then(function (newUser) {
             // this will wake in case the user added a new recipe

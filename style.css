@@ -20,6 +20,7 @@ h1 {
 .direction-english {
     direction: ltr;
     text-align: left;
+    font-family: 'Kreon', serif;
 }
 
 /* user alert style */
