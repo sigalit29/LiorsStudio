@@ -68,12 +68,13 @@ h1 {
     padding-right: 25px;
 }
 
-.login button, .user-buttons{
-    font-size: 1.2em; 
+.login button, .user-buttons {
+    font-size: 1.2em;
 }
 
-
-
+.modal-photo-gallery button {
+    font-size: 0.9em;
+}
 /*--- Home page and login CSS's------------------------*/
 
 .login {
@@ -93,12 +94,10 @@ h1 {
     font-size: 1.5em;
 }
 
-
 #last-name, #fist-name {
     font-size: 1.3em;
     font-family: 'Kreon', serif;
 }
-
 
 /*--- User page and login CSS's------------------------*/
 
@@ -142,5 +141,38 @@ h1 {
 }
 
 /*--- Photo Gallery page CSS's------------------------*/
+
+.photo-gallery {
+    width: 85%;
+    height: 80%;
+    margin: auto;
+}
+
+.photo-gallery-btn {
+    margin-top: 2vh;
+    margin-right: 2vh;
+    color: rgb(235, 210, 210);
+    margin: top;
+    height: 60px;
+    width: 200px;
+    font-size: 1.3em;
+}
+
+.modal-photo-gallery {
+    background-color: rgb(82, 77, 77);
+    color: rgb(235, 210, 210);
+    letter-spacing: 1.5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    max-height: 100%;
+    max-width: 100%;
+    font-size: 1.5em;
+}
+
+.interval-input input {
+    font-size: 0.8em;
+    max-width: 25%;
+}
 
 /*--- Workshops page CSS's------------------------*/

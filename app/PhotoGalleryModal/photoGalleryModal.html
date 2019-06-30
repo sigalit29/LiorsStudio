@@ -1,0 +1,24 @@
+<div class="modal-photo-gallery">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">שנה הגדרות לגלריית התמונות</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="button" class="btn btn-info" ng-click="addSlide()">הוסף תמונה</button>
+            <button type="button" class="btn btn-info" ng-click="randomize()">שנה סדר התמונות</button>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="noWrapSlides">
+                    בטל לולאת החלפה של תמונות
+                </label>
+            </div>
+        </div>
+        <div class="interval-input col-md-12 ">
+            זמן השהייה בין תמונות: <input type="number" class="form-control direction-english" ng-model="myInterval">
+            הכנס מספר שלילי או 0 להפסיק את ההשהיה של הזמן
+        </div>
+        <button type="button" class="ml-auto  btn btn-primary" ng-click="updateNewSettings()">שמור שינויים</button>
+        <button type="button" class="mr-auto btn btn-secondary" ng-click="cancelUpdate()">סגור בלי לשנות</button>
+       
+    </div>
+</div>
