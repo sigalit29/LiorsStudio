@@ -1,10 +1,10 @@
 <div class="landing-img jumbotron">
-    <div class="login" >
+    <div class="login">
         <h1>כניסה לאתר</h1>
-        <div class="direction-english alert alert-danger" role="alert" ng-show="invalidLogin">
-            <strong>Invalid Login!</strong> incorrect email or password
+        <div class="alert alert-danger" role="alert" ng-show="invalidLogin && showLoginWindow">
+            בעיה עם פרטי משתמש! password או email לא תקינים
         </div>
-        <form>
+        <form class="login-form" ng-show="showLoginWindow">
             <div class="form-group  direction-english">
                 <label for="email">Email:</label>
                 <input type="email" class="ml-auto form-control" ng-change="newInputUser()" id="email" ng-model="email"
@@ -15,11 +15,19 @@
                 <input type="password" class="form-control" id="pwd" ng-change="newInputUser()" ng-model="pwd"
                     placeholder="Enter password">
             </div>
+        </form>
+        <hr>
+        <form class="enter-user-page">
             <button type="button" class="btn btn-success btn-block" ng-click="login()">כניסה לאזור אישי</button>
-
-            <span class="text-center btn-block"> או</span>
-            <hr>
-            <button type="button" class="btn btn-warning btn-block" ng-click="createAccount()">צור משתמש חדש</button>
+        </form>
+        <hr>
+        <form class="logout-form" ng-show="showLogoutButton">
+            <button type="button" class="btn btn-warning btn-block" ng-click="logout()">יציאה מחשבון</button>
+        </form>
+      
+        <span class="text-center btn-block"> או </span>
+        <hr>
+        <button type="button" class="btn btn-warning btn-block" ng-click="createAccount()">צור משתמש חדש</button>
         </form>
     </div>
 </div>

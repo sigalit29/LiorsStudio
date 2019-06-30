@@ -39,6 +39,7 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     padding-right: 3px;
+    height: 70rem;
 }
 
 .user-img {
@@ -67,6 +68,12 @@ h1 {
     padding-right: 25px;
 }
 
+.login button, .user-buttons{
+    font-size: 1.2em; 
+}
+
+
+
 /*--- Home page and login CSS's------------------------*/
 
 .login {
@@ -77,14 +84,21 @@ h1 {
     padding-right: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
-    height: 100%;
-    width: 280px;
-    font-size: 1.5em;
+    max-height: 100%;
+    width: 350px;
+    font-size: 1.8em;
 }
 
 .login h1 {
     font-size: 1.5em;
 }
+
+
+#last-name, #fist-name {
+    font-size: 1.3em;
+    font-family: 'Kreon', serif;
+}
+
 
 /*--- User page and login CSS's------------------------*/
 

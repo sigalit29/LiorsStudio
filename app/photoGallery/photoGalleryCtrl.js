@@ -7,19 +7,19 @@ app.controller("photoGalleryCtrl", function($scope, $location, $log) {
       var currIndex = 0;
     
       $scope.slides.push({
-        image: "Images/P3010006.jpg",
+        image: "Images/P3010028.jpg",
         text: "Image 1",
         id: currIndex++
       });
 
       $scope.slides.push({
-        image: "Images/P3010009.jpg",
+        image: "Images/P3010063.jpg",
         text: "Image 2",
         id: currIndex++
       });
 
       $scope.slides.push({
-        image: "Images/P3010010.jpg",
+        image: "Images/P3010064.jpg",
         text: "Image 3",
         id: currIndex++
       });

@@ -1,7 +1,7 @@
 <div class="photo-gallery">
-    <h1> גלרית התמונות</h1>
+    <!-- <h1> גלרית התמונות</h1> -->
     <div >
-        <div style="width: 80%; margin: auto">
+        <div style="width: 80%; height: 80%; margin: auto">
           <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
             <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
               <img ng-src="{{slide.image}}" class="img-fluid">
