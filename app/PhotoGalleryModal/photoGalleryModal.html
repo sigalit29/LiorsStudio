@@ -8,9 +8,9 @@
             <div class="form-group row direction-english">
                 <input type="file" image-with-preview ng-model="img" accept="image/jpeg,image/png">
             </div>
-            <div class="choose-file inline-block">
-                <img class="img-fluid" ng-show="img.src" ng-src="{{img.src}}" alt="new img">
-                <button type="button" class="btn btn-info" ng-if="img.src" ng-click="addSlide()">הוסף תמונה</button>
-                <button type="button" class="btn btn-light" ng-click="cancelEdit()">בטל הוספה</button>
+            <div class="choose-file">
+                <img class="img-fluid" ng-show="img.src" ng-src="{{img.src}}" alt="new img">               
             </div>
+            <button type="button" class="btn btn-primary mr-auto" ng-if="img.src" ng-click="addSlide()">הוסף תמונה</button>
+            <button type="button" class="btn btn-warning ml-auto" ng-click="cancelEdit()">בטל הוספה</button>
         </div>

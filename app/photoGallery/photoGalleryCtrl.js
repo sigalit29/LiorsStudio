@@ -62,6 +62,7 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal)
     var indexes = generateIndexesArray();
     assignNewIndexesToSlides(indexes);
     $scope.noWrapSlides = false;
+    
   }
 
 
