@@ -2,9 +2,17 @@
     <div class="modal-header">
         <h3 class="modal-title" id="modal-title">שנה הגדרות לגלריית התמונות</h3>
     </div>
+    <hr>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
+            <div class="form-group row direction-english">
+                <input type="file" image-with-preview ng-model="img" accept="image/jpeg,image/png">
+            </div>
+            <div class="choose-file inline-block">
+            <img class="img-fluid" ng-show="img.src" ng-src="{{img.src}}" alt="new img">
             <button type="button" class="btn btn-info" ng-click="addSlide()">הוסף תמונה</button>
+        </div>
+            <hr>
             <button type="button" class="btn btn-info" ng-click="randomize()">שנה סדר התמונות</button>
             <div class="checkbox">
                 <label>
@@ -17,8 +25,9 @@
             זמן השהייה בין תמונות: <input type="number" class="form-control direction-english" ng-model="myInterval">
             הכנס מספר שלילי או 0 להפסיק את ההשהיה של הזמן
         </div>
+        <hr>
         <button type="button" class="ml-auto  btn btn-primary" ng-click="updateNewSettings()">שמור שינויים</button>
         <button type="button" class="mr-auto btn btn-secondary" ng-click="cancelUpdate()">סגור בלי לשנות</button>
-       
+
     </div>
 </div>

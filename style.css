@@ -100,13 +100,6 @@ h1 {
 }
 
 /*--- User page and login CSS's------------------------*/
-
-.user-page h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 2.2em;
-}
-
 .user-buttons {
     margin-top: 20vh;
     margin-right: 10vh;
@@ -118,7 +111,7 @@ h1 {
 
 /*--- Teachers page CSS's------------------------*/
 
-.teachers h1, .photo-gallery h1, .workshops h1, .weekly-activity h1 {
+.user-page h1, .teachers h1, .photo-gallery h1, .workshops h1, .weekly-activity h1 {
     background-color: rgb(82, 77, 77);
     font-weight: bold;
     font-size: 2.5em;
@@ -143,9 +136,13 @@ h1 {
 /*--- Photo Gallery page CSS's------------------------*/
 
 .photo-gallery {
-    width: 85%;
-    height: 80%;
-    margin: auto;
+    max-width: 75rem;
+    /* max-height: 65rem; */
+    margin: auto;    
+}
+
+.ng-isolate-scope.carousel > ol{
+    padding: 0;
 }
 
 .photo-gallery-btn {

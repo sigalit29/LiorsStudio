@@ -3,6 +3,7 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal)
 
   var slides = $scope.slides = [];
   var currIndex = 0;
+  $scope.activeSlide = 0;
 
   $scope.slides.push({
     image: "Images/P3010028.jpg",
@@ -27,9 +28,11 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal)
       templateUrl: "app/PhotoGalleryModal/photoGalleryModal.html",
       controller: "photoGalleryModalCtrl"
     })
-    modalInstance.result.then(function (newSettings) {
+    modalInstance.result.then(function (newSlide) {
       // this will wake in case the user added a new recipe
-      /* $scope.slides.push({newSettings.);*/
+      newSlide.id = currIndex++; 
+      $scope.activeSlide = newSlide.id;  
+      $scope.slides.push(newSlide);  
     }, function () {
       // this will wake up in case the user canceled the new recipe
       console.log("user canceled galley settings");

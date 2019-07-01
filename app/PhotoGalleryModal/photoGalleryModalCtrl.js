@@ -3,20 +3,12 @@ app.controller("photoGalleryModalCtrl", function ($scope, $location, $log, $uibM
     $scope.animationsEnabled = true;
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
-    $scope.active = 0;
     $scope.slides = [];
-    $scope.newSettigs = { slides: [], animationsEnabled: true, myInterval: 5000, noWrapSlides: false, active: 0 };
+    var currIndex ;
 
+    $scope.updateNewSettings = function() {    
 
-     $scope.updateNewSettings = function() {
-        $scope.newSettigs.active = $scope.animationsEnabled;
-        $scope.newSettigs.myInterval = $scope.myInterval;
-        $scope.newSettigs.noWrapSlides = $scope.noWrapSlides;
-        $scope.newSettigs.active = $scope.active;
-        $scope.newSettigs.slides = $scope.slides;
-        var gallerySettings = $scope.newSettigs;
-
-        $uibModalInstance.close(gallerySettings);
+        $uibModalInstance.close($scope.slides);
     }
 
     $scope.cancelUpdate = function () {
@@ -25,12 +17,18 @@ app.controller("photoGalleryModalCtrl", function ($scope, $location, $log, $uibM
 
 
     $scope.addSlide = function () {
-        var newWidth = 600 + slides.length + 1;
-        slides.push({
-            image: '../Images/' + newWidth + '/300',
-            text: ['Nice image', 'Awesome photograph', 'That is so cool', 'I love that'][slides.length % 4],
+        // var newWidth = 600 + slides.length + 1;
+        // $scope.slides.push({
+        //     image: "Images/P3010028.jpg",
+        //     text: "Image 1",
+        //     id: currIndex++
+        //   });             
+        var newSlide = ({
+            image: $scope.img.src,
+            text: "new",
             id: currIndex++
         });
+        $uibModalInstance.close(newSlide);
     };
 
     $scope.randomize = function () {
