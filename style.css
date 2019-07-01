@@ -51,7 +51,7 @@ h1 {
 }
 
 .teachers-img {
-    background-image: url("../Images/TreeAndFlowers.jpg");
+    background-image: url("../Images/P3010063.jpg");
 }
 
 /*--- NavBar CSS's------------------------*/
@@ -118,11 +118,11 @@ h1 {
 
 /*--- Teachers page CSS's------------------------*/
 
-.teachers h1, .photo-gallery h1, .workshops h1 {
+.teachers h1, .photo-gallery h1, .workshops h1, .weekly-activity h1 {
     background-color: rgb(82, 77, 77);
     font-weight: bold;
     font-size: 2.5em;
-    height: 100%;
+    height: 5%;
 }
 
 .teachers>.teachers-img>.card>img {
