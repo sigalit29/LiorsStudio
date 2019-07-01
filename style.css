@@ -75,6 +75,7 @@ h1 {
 .modal-photo-gallery button {
     font-size: 0.9em;
 }
+
 /*--- Home page and login CSS's------------------------*/
 
 .login {
@@ -100,6 +101,7 @@ h1 {
 }
 
 /*--- User page and login CSS's------------------------*/
+
 .user-buttons {
     margin-top: 20vh;
     margin-right: 10vh;
@@ -136,12 +138,11 @@ h1 {
 /*--- Photo Gallery page CSS's------------------------*/
 
 .photo-gallery {
-    max-width: 75rem;
-    /* max-height: 65rem; */
-    margin: auto;    
+    max-width: 60%;
+    margin: auto;
 }
 
-.ng-isolate-scope.carousel > ol{
+.ng-isolate-scope.carousel>ol {
     padding: 0;
 }
 

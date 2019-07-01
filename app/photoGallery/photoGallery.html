@@ -1,19 +1,21 @@
-<div class="photo-gallery ">
+<div class="photo-gallery mw-100">
   <h1> גלרית תמונות</h1>
-  <div>
-    <div class="photo-gallery">
-      <div uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="activeSlide">
-        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-          <img ng-src="{{slide.image}}" class="img-fluid">
-          <div class="carousel-caption">
-            <h4>Slide {{slide.id}}</h4>
-            <p>{{slide.text}}</p>
-          </div>
+</div>
+<div class="carousel-div">
+  <div class="photo-gallery">
+    <div uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="activeSlide">
+      <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}" class="img-fluid">
+        <div class="carousel-caption">
+          <h4>Slide {{slide.id}}</h4>
+          <p>{{slide.text}}</p>
         </div>
       </div>
-      <div class="row">
-        <button type="button" class="btn btn-info btn-block photo-gallery-btn" ng-click="openGalleryCtrl()">כניסה לעדכון
-          גלריה</button>
-      </div>
     </div>
+    <div class="row">
+      <button type="button" class="btn btn-info btn-block photo-gallery-btn" ng-click="openGalleryCtrl()">כניסה לעדכון
+        גלריה</button>
+    </div>
+  </div>
+  <div>
   </div>
