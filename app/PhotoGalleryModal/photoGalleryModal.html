@@ -9,25 +9,8 @@
                 <input type="file" image-with-preview ng-model="img" accept="image/jpeg,image/png">
             </div>
             <div class="choose-file inline-block">
-            <img class="img-fluid" ng-show="img.src" ng-src="{{img.src}}" alt="new img">
-            <button type="button" class="btn btn-info" ng-click="addSlide()">הוסף תמונה</button>
-        </div>
-            <hr>
-            <button type="button" class="btn btn-info" ng-click="randomize()">שנה סדר התמונות</button>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" ng-model="noWrapSlides">
-                    בטל לולאת החלפה של תמונות
-                </label>
+                <img class="img-fluid" ng-show="img.src" ng-src="{{img.src}}" alt="new img">
+                <button type="button" class="btn btn-info" ng-if="img.src" ng-click="addSlide()">הוסף תמונה</button>
+                <button type="button" class="btn btn-light" ng-click="cancelEdit()">בטל הוספה</button>
             </div>
         </div>
-        <div class="interval-input col-md-12 ">
-            זמן השהייה בין תמונות: <input type="number" class="form-control direction-english" ng-model="myInterval">
-            הכנס מספר שלילי או 0 להפסיק את ההשהיה של הזמן
-        </div>
-        <hr>
-        <button type="button" class="ml-auto  btn btn-primary" ng-click="updateNewSettings()">שמור שינויים</button>
-        <button type="button" class="mr-auto btn btn-secondary" ng-click="cancelUpdate()">סגור בלי לשנות</button>
-
-    </div>
-</div>
