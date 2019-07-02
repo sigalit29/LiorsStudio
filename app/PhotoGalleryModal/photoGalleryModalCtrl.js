@@ -1,9 +1,7 @@
 app.controller("photoGalleryModalCtrl", function ($scope, $location, $log, $uibModalInstance) {
 
     $scope.slides = [];
-    var currIndex;
-
-    
+      
     $scope.cancelEdit = function () {
         $uibModalInstance.dismiss();
     }
@@ -13,8 +11,7 @@ app.controller("photoGalleryModalCtrl", function ($scope, $location, $log, $uibM
       
         var newSlide = ({
             image: $scope.img.src,
-            text: "new",
-            id: currIndex++
+            text: "new"
         });
         $uibModalInstance.close(newSlide);
     };

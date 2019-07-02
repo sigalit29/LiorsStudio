@@ -1,30 +1,24 @@
-app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal) {
+app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal, photoSlideSrv) {
 
 
-  var slides = $scope.slides = [];
+  $scope.slides = [];
   var currIndex = 0;
 
   $scope.activeSlide = 0;
   $scope.myInterval = 5000;
   $scope.noWrapSlides = false;
+  $scope.isSlidesUpdatedFromParseDb = false;
 
-  $scope.slides.push({
-    image: "Images/P3010028.jpg",
-    text: "Image 1",
-    id: currIndex++
-  });
+  /** First time run get all gallary slides from the Parse DB (Back4app) */
+  if (!$scope.isSlidesUpdatedFromParseDb) {
+    photoSlideSrv.getSlides().then(function (ParseSlides) {
+      $scope.slides = ParseSlides;
+      $scope.activeSlide = ParseSlides.length;
+      /**This get is done only once */
+      $scope.isSlidesUpdatedFromParseDb = true;
+    });
+  }
 
-  $scope.slides.push({
-    image: "Images/P3010063.jpg",
-    text: "Image 2",
-    id: currIndex++
-  });
-
-  $scope.slides.push({
-    image: "Images/P3010064.jpg",
-    text: "Image 3",
-    id: currIndex++
-  });
   /** open the add new slide modal */
   $scope.openAddNewSlide = function () {
     var modalInstance = $uibModal.open({
@@ -35,6 +29,11 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal)
       // this will wake in case the user added a new slide
       newSlide.id = currIndex++;
       $scope.activeSlide = newSlide.id;
+      // function addNewSlide(slideId, image, text) 
+      photoSlideSrv.addNewSlide(newSlide).then(function (newSlide) {
+        $uibModalInstance.close(newSlide);
+      });
+
       $scope.slides.push(newSlide);
     }, function () {
       // this will wake up in case the user canceled the new slide
@@ -58,11 +57,13 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal)
     })
   };
 
+
+
   $scope.randomize = function () {
     var indexes = generateIndexesArray();
     assignNewIndexesToSlides(indexes);
     $scope.noWrapSlides = false;
-    
+
   }
 
 
@@ -85,8 +86,8 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal)
   }
 
   function assignNewIndexesToSlides(indexes) {
-    for (var i = 0, l = slides.length; i < l; i++) {
-      slides[i].id = indexes.pop();
+    for (var i = 0, l = $scope.slides.length; i < l; i++) {
+      $scope.slides[i].id = indexes.pop();
     }
   }
 

@@ -1,7 +1,7 @@
 
 app.factory("userSrv", function ($q) {
 
-    var activeUser = null; // new User({id: 1, fname: "Nir" ...})
+    var activeUser = null; 
     var userIdCounter = 0;
 
     // { User object in yogaStudio DB - Back4App
