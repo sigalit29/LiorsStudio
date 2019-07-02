@@ -1,11 +1,10 @@
 app.factory("photoSlideSrv", function ($q) {
 
-    var slideIndex = 0;
 
     class Slide {
         constructor(parseSlide) {
             this.parseSlideId = parseSlide.id;
-            this.slideId = parseSlide.get("slideId");
+            this.id = parseSlide.get("slideIndex");
             this.text = parseSlide.get("text");
             this.image = parseSlide.get("image")._url;
         }
@@ -25,7 +24,6 @@ app.factory("photoSlideSrv", function ($q) {
             for (let index = 0; index < results.length; index++) {
                 slides.push(new Slide(results[index]));
             }
-            slideIndex = results.length;
             async.resolve(slides);
             console.log(`ParseObjects found: ${JSON.stringify(results)}`);
         }, (error) => {
@@ -39,17 +37,20 @@ app.factory("photoSlideSrv", function ($q) {
     function addNewSlide(slide) {
         var async = $q.defer();
 
-        slideIndex++;
-
         if (!slide.text) {
             text = "untiteled Image" + slideIndex;
         }
         // Preparing the new parse recipe object to save
         var SlideParse = Parse.Object.extend('Slide');
         var newSlid = new SlideParse();
-        newSlid.set('slideId', slideIndex);
+        if( !slide.id)
+        {
+            console.error('the new slide has no id put 1 as defult');
+            slide.id = 1; 
+        }
+        newSlid.set('slideIndex', slide.id);
         newSlid.set('text', slide.text);
-        newSlid.set('image', new Parse.File(slide.text + ".jpg", { base64: slide.image }));
+        newSlid.set('image', new Parse.File("userImg" + slide.id + ".jpg", { base64: slide.image }));
 
         // Actual saving the new slide in Parse
         newSlid.save().then(

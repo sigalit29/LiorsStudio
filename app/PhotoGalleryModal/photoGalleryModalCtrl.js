@@ -1,7 +1,8 @@
 app.controller("photoGalleryModalCtrl", function ($scope, $location, $log, $uibModalInstance) {
 
     $scope.slides = [];
-      
+    $scope.userText = "";
+    
     $scope.cancelEdit = function () {
         $uibModalInstance.dismiss();
     }
@@ -11,7 +12,7 @@ app.controller("photoGalleryModalCtrl", function ($scope, $location, $log, $uibM
       
         var newSlide = ({
             image: $scope.img.src,
-            text: "new"
+            text: $scope.userText
         });
         $uibModalInstance.close(newSlide);
     };

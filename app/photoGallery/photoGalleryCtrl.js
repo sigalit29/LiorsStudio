@@ -2,9 +2,9 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal,
 
 
   $scope.slides = [];
-  var currIndex = 0;
+  $scope.currIndex = 1;
 
-  $scope.activeSlide = 0;
+  $scope.activeSlide = 1;
   $scope.myInterval = 5000;
   $scope.noWrapSlides = false;
   $scope.isSlidesUpdatedFromParseDb = false;
@@ -13,7 +13,9 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal,
   if (!$scope.isSlidesUpdatedFromParseDb) {
     photoSlideSrv.getSlides().then(function (ParseSlides) {
       $scope.slides = ParseSlides;
-      $scope.activeSlide = ParseSlides.length;
+      // if (ParseSlides.length) {
+      //   $scope.activeSlide = ParseSlides[0].id;
+      // }
       /**This get is done only once */
       $scope.isSlidesUpdatedFromParseDb = true;
     });
@@ -27,9 +29,11 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal,
     })
     modalInstance.result.then(function (newSlide) {
       // this will wake in case the user added a new slide
-      newSlide.id = currIndex++;
+      newSlide.id = $scope.currIndex++;
       $scope.activeSlide = newSlide.id;
-      // function addNewSlide(slideId, image, text) 
+      if (!newSlide.id) {
+        $log.error(" new slide id was not updated", newSlide.id);
+      }
       photoSlideSrv.addNewSlide(newSlide).then(function (newSlide) {
         $uibModalInstance.close(newSlide);
       });
@@ -93,7 +97,7 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal,
 
   function generateIndexesArray() {
     var indexes = [];
-    for (var i = 0; i < currIndex; ++i) {
+    for (var i = 0; i < $scope.currIndex; ++i) {
       indexes[i] = i;
     }
     return shuffle(indexes);

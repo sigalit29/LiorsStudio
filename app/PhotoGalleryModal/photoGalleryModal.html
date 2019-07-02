@@ -2,17 +2,27 @@
     <div class="modal-header">
         <h3 class="modal-title" id="modal-title">שנה הגדרות לגלריית התמונות</h3>
     </div>
-    <hr>
     <div class="row">
         <div class="col-md-12">
             <div class="form-group row direction-english">
-                <label for="file">..בחר קובץ להעלות ואז תוכל לשמור אותו</label>                 
+                <label for="file">..בחר קובץ להעלות ואז תוכל לשמור אותו</label>
                 <input type="file" image-with-preview ng-model="img" accept="image/jpeg,image/png">
             </div>
-            <div class="choose-file">
-                <img class="img-fluid" ng-show="img.src" ng-src="{{img.src}}" alt="new img">
-            </div>
-            <button type="button" class="btn btn-primary mr-auto" ng-if="img.src" ng-click="addSlide()">הוסף
-                תמונה</button>
+            <hr>
+        </div>
+        <div class="choose-file">
+            <img class="img-fluid" ng-show="img.src" ng-src="{{img.src}}" alt="new img">
+        </div>
+        <hr>
+        <div class="form-group col-sm-12">
+            <label for="user-text" class="col-form-label">שם לתמונה</label>
+            <input type="text" class="form-control" ng-model="userText" id="user-text" placeholder="הכנס שם לתמונה">
+            <hr>
+        </div>
+
+        <div class="col-sm-12 form-group">
+            <button type="button" class="btn btn-primary mr-auto" ng-if="img.src" ng-click="addSlide()">
+                הוסף תמונה</button>
             <button type="button" class="btn btn-warning ml-auto" ng-click="cancelEdit()">בטל הוספה</button>
         </div>
+    </div>
