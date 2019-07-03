@@ -1,21 +1,25 @@
 <div class="photo-gallery mw-100">
   <h1> גלרית תמונות</h1>
+
 </div>
-<div class="carousel-div ">
-  <div class="photo-gallery ">
+<div class="carousel-div">  
+  <div class="photo-gallery">
     <div uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="activeSlide" class="direction-english">
-      <div uib-slide ng-repeat="slide in slides track by slide.id" index="$index">
-        <img ng-src="{{slide.image}}" class="img-fluid ">
+      <div uib-slide ng-repeat="slide in slides track by slide.id" index="$index" ng-mouseenter="options=true"
+        ng-mouseleave="options=false">
+        <img ng-src="{{slide.image}}" class="img-fluid">
         <div class="carousel-caption">
           <h4>Slide {{$index}}</h4>
           <p>{{slide.text}}</p>
-        </div>
+          <i ng-show="options" ng-click="deleteItem(slide.text)" class="fa fa-trash fa-2x"></i>         
+        </div>       
       </div>
     </div>
+
     <div class="row">
       <button type="button" class="btn btn-info photo-gallery-btn" ng-click="openGalleryCtrl()"> כניסה לשינוי
         התזמונים במצגת</button>
-      <button type="button" class="btn btn-info  photo-gallery-btn" ng-click="openAddNewSlide()">כניסה להוספת
+      <button type="button" class="btn btn-info photo-gallery-btn" ng-click="openAddNewSlide()">כניסה להוספת
         תמונה
     </div>
   </div>
