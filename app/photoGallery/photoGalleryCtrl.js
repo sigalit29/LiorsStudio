@@ -25,8 +25,9 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal,
     /** open the delete slide modal */
     var modalInstance = $uibModal.open({
       templateUrl: "app/PhotoGalleryModal/photoGalleryDelModal.html",
-      controller: "photoGalleryDelModalCtrl"
-    })
+      controller: "photoGalleryDelModalCtrl",
+    
+    })   
     modalInstance.result.then(function (deleteWasConfirmed) {
       // this will wake in case the user deleted the current slide
       if (deleteWasConfirmed) {
