@@ -10,7 +10,7 @@ app.factory("photoSlideSrv", function ($q) {
         }
     }
 
-    var lastIndex  = 0;
+    var lastIndex = 0;
 
     function getSlides() {
 
@@ -45,15 +45,7 @@ app.factory("photoSlideSrv", function ($q) {
         // Preparing the new parse recipe object to save
         var SlideParse = Parse.Object.extend('Slide');
         var newSlid = new SlideParse();
-        if(slide.id == lastIndex + 1)
-        {
-            newSlid.set('slideIndex',slide.id);
-            lastIndex++;
-            console.error('the new slide id was not as exspected' +  slide.id);            
-        }else{
-            newSlid.set('slideIndex', lastIndex++);
-        }
-       
+        newSlid.set('slideIndex', slide.id);        
         newSlid.set('text', slide.text);
         newSlid.set('image', new Parse.File("userImg" + slide.id + ".jpg", { base64: slide.image }));
 

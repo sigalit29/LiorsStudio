@@ -29,7 +29,8 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal,
     })
     modalInstance.result.then(function (newSlide) {
       // this will wake in case the user added a new slide      
-      newSlide.id = getMaxIndex();
+      var max = getMaxIndex();
+      newSlide.id = ++max;
       $scope.activeSlide = newSlide.id;
       photoSlideSrv.addNewSlide(newSlide).then(function (newSlide) {
         $scope.slides.push(newSlide);
