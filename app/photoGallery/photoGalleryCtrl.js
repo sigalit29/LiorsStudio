@@ -1,10 +1,10 @@
-app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal, photoSlideSrv) {
+app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photoSlideSrv) {
 
 
   var slides = $scope.slides = [];
   var currIndex = $scope.currIndex = 0;
 
-   $scope.activeSlide = 0;
+  $scope.activeSlide = 0;
   $scope.myInterval = 5000;
   $scope.noWrapSlides = false;
   $scope.isSlidesUpdatedFromParseDb = false;
@@ -21,13 +21,18 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal,
     });
   }
 
-  $scope.deleteItem = function (slideText) {
+  $scope.deleteItem = function (slideImg) {
     /** open the delete slide modal */
     var modalInstance = $uibModal.open({
       templateUrl: "app/PhotoGalleryModal/photoGalleryDelModal.html",
       controller: "photoGalleryDelModalCtrl",
-    
-    })   
+      resolve: {
+        image: function () {
+          return slideImg;
+        }
+      }
+    });
+
     modalInstance.result.then(function (deleteWasConfirmed) {
       // this will wake in case the user deleted the current slide
       if (deleteWasConfirmed) {
@@ -40,7 +45,7 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $log, $uibModal,
     })
   };
 
-  
+
   /** open the add new slide modal */
   $scope.openAddNewSlide = function () {
     var modalInstance = $uibModal.open({

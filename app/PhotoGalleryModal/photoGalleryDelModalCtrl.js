@@ -1,4 +1,6 @@
-app.controller("photoGalleryDelModalCtrl", function ($scope, $log, $uibModalInstance) {
+app.controller("photoGalleryDelModalCtrl", function ($scope, $log, $uibModalInstance, image) {
+
+  $scope.imgToDelete = image;
 
 
   $scope.deleteConfirmed = function () {
