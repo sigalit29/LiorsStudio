@@ -40,7 +40,6 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
         $scope.slides.splice(slide.id, 1);
         photoSlideSrv.deleteSlide(slide).then(function (res) {
           console.log("user deleted slide", res);
-
         });
       }
     }, function () {
@@ -60,14 +59,15 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
       // this will wake in case the user added a new slide      
       var max = getMaxIndex();
       newSlide.id = ++max;
-      $scope.activeSlide = newSlide.id;
-      photoSlideSrv.addNewSlide(newSlide).then(function (newSlide) {
-        $scope.slides.push(newSlide);
+      photoSlideSrv.addNewSlide(newSlide, newSlide.id).then(function (newSlide) {
+        $scope.slides.push(newSlide);       
+        IndexTheSlideArray(slides);
       });
     }, function () {
       // this will wake up in case the user canceled the new slide
       console.log("user canceled add slide");
     })
+
   };
 
 
@@ -93,6 +93,7 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
     for (var i = 0, l = slides.length; i < l; i++) {
       slides[i].id = i;
     }
+    $scope.activeSlide = slides.length - 1;
   }
 
 
