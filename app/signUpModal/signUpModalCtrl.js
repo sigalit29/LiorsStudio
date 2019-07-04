@@ -2,16 +2,16 @@ app.controller("signUpModalCtrl", function ($scope, $location, $log, $uibModalIn
 
     $scope.animationsEnabled = true;
 
-    $scope.email = "";
-    $scope.pwd = "";
-    $scope.fname = "";
-    $scope.lname = "";
+    $scope.signUpEmail = "";
+    $scope.signUpPwd = "";
+    $scope.signUpFname = "";
+    $scope.signUpLname = "";
 
 
     $scope.ok = function () {
-
-
-        userSrv.addNewUser($scope.fname, $scope.lname, $scope.email, $scope.pwd).then(function (newUser) {
+        
+        
+        userSrv.addNewUser($scope.signUpFname, $scope.signUpLname, $scope.signUpEmail, $scope.signUpPwd).then(function (newUser) {
             $uibModalInstance.close(newUser);
         });
     };
