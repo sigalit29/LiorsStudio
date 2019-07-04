@@ -67,9 +67,7 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
       // this will wake up in case the user canceled the new slide
       console.log("user canceled add slide");
     })
-
   };
-
 
 
   /** open the carosel slide parameter settings modal */
