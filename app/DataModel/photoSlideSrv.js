@@ -4,7 +4,6 @@ app.factory("photoSlideSrv", function ($q) {
     class Slide {
         constructor(parseSlide) {
             this.parseSlideId = parseSlide.id;
-            this.id = parseSlide.get("slideIndex");
             this.text = parseSlide.get("text");
             this.image = parseSlide.get("image")._url;
         }
@@ -44,8 +43,7 @@ app.factory("photoSlideSrv", function ($q) {
         }
         // Preparing the new parse recipe object to save
         var SlideParse = Parse.Object.extend('Slide');
-        var newSlid = new SlideParse();
-        newSlid.set('slideIndex', slide.id);        
+        var newSlid = new SlideParse();       
         newSlid.set('text', slide.text);
         newSlid.set('image', new Parse.File("userImg" + slide.id + ".jpg", { base64: slide.image }));
 
@@ -63,9 +61,28 @@ app.factory("photoSlideSrv", function ($q) {
         return async.promise;
     }
 
+    function deleteSlide(slideToDel) {
+        var async = $q.defer();
+        
+        const Slide = Parse.Object.extend('Slide');
+        const query = new Parse.Query(Slide);
+        // here you put the objectId that you want to delete
+        query.get(slideToDel.parseSlideId).then((object) => {
+            object.destroy().then((response) => {
+                console.log('Deleted Slide', object);
+                async.resolve(response);
+            }, (error) => {
+                console.error('Error while deleting Slide', error);
+                async.reject(error);
+            });
+        });
+        return async.promise;
+    }
+
     return {
         addNewSlide: addNewSlide,
-        getSlides: getSlides
+        getSlides: getSlides,
+        deleteSlide: deleteSlide
     }
 
 });

@@ -16,12 +16,14 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
         slides.push(ParseSlides[index]);
         $scope.currIndex = $scope.slides.length;
       }
+
+      IndexTheSlideArray(slides);
       /**This get is done only once */
       $scope.isSlidesUpdatedFromParseDb = true;
     });
   }
 
-  $scope.deleteItem = function (slideImg) {
+  $scope.deleteItem = function (slideImg, slide) {
     /** open the delete slide modal */
     var modalInstance = $uibModal.open({
       templateUrl: "app/PhotoGalleryModal/photoGalleryDelModal.html",
@@ -31,20 +33,22 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
           return slideImg;
         }
       }
-    });
-
+    })
     modalInstance.result.then(function (deleteWasConfirmed) {
       // this will wake in case the user deleted the current slide
       if (deleteWasConfirmed) {
-        console.info("slide was deleted", slideText);
-        $scope.slides.splice(this.index, 1);
+        $scope.slides.splice(slide.id, 1);
+        photoSlideSrv.deleteSlide(slide).then(function (res) {
+          console.log("user deleted slide", res);
+
+        });
       }
     }, function () {
-      // this will wake up in case the user canceled the carosel update
+      // this will wake up in case the user canceled the update
       console.log("user canceled delete");
     })
+    IndexTheSlideArray(slides);
   };
-
 
   /** open the add new slide modal */
   $scope.openAddNewSlide = function () {
@@ -85,6 +89,13 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
   };
 
   // utilites
+  function IndexTheSlideArray(slides) {
+    for (var i = 0, l = slides.length; i < l; i++) {
+      slides[i].id = i;
+    }
+  }
+
+
   function getMaxIndex() {
     var max = 0;
     for (var i = 0, l = slides.length; i < l; i++) {
@@ -95,6 +106,7 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
     return (max);
 
   }
+
 
 
 })
