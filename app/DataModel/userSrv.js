@@ -1,17 +1,7 @@
 
 app.factory("userSrv", function ($q) {
 
-    var activeUser = null; 
-    var userIdCounter = 0;
-
-    // { User object in yogaStudio DB - Back4App
-    //     "objectId": "4BwpMWdCnm",
-    //     "username": "A string",
-    //     "email": "A string",
-    //     "fname": "A string",
-    //     "lname": "A string",
-    //     "password": "#Password123",
-    //   }
+    var activeUser = null;
 
     function User(user) {
         this.usertId = user.id;
@@ -55,7 +45,9 @@ app.factory("userSrv", function ($q) {
         return activeUser;
     }
 
-    function addNewUser(fname, lname, email, pwd) {
+
+    /*-- Add new user service   -*/
+    function addNewUser(fname, lname, email, pwd, phone) {
         var async = $q.defer();
         var fullName = fname + ' ' + lname;
 
@@ -65,6 +57,7 @@ app.factory("userSrv", function ($q) {
         user.set('lname', lname);
         user.set('email', email);
         user.set('password', pwd);
+        user.set('userPhone', phone);
 
         user.signUp().then((user) => {
             activeUser = new User(user);
@@ -77,13 +70,64 @@ app.factory("userSrv", function ($q) {
         return async.promise;
     }
 
+    /*-- Reset PW service   -*/
+    function resetPassword(email, pwd) {
+        var async = $q.defer();
+        function resetPassword() {
+            Parse.User.requestPasswordReset(email).then(function() {
+              console.log("Password reset request was sent successfully");
+              async.resolve(activeUser);
+            }).catch(function(error) {
+              console.log("The login failed with error: " + error.code + " " + error.message);
+              async.reject(error);
+            });
+        }
+     
+        return async.promise;
+    }
+
+
+
+    /*-- update exsisting user data service   -*/
+    function updateUser(fname, lname, email, phone) {
+        var async = $q.defer();
+        var fullName = fname + ' ' + lname;
+
+        const User = new Parse.User();
+        const query = new Parse.Query(User);
+
+        if (isLoggedIn()) {
+            // Finds the user by its ID
+            query.get(activeUser.usertId).then((user) => {
+                // Updates the data we want
+                user.set('username', fullName);
+                user.set('email', email);
+                user.set('fname', fname);
+                user.set('lname', lname);
+                user.set('userPhone', phone);
+                // Saves the user with the updated data
+                user.save().then((response) => {
+                    console.log('Updated user', response);
+                    async.resolve(response);
+                }).catch((error) => {
+                    console.error('Error while updating user', error);
+                    async.reject(error);
+
+                });
+            });
+        }
+        return async.promise;
+    }
+
 
     return {
         isLoggedIn: isLoggedIn,
         login: login,
         logout: logout,
         getActiveUser: getActiveUser,
-        addNewUser: addNewUser
+        addNewUser: addNewUser,
+        updateUser: updateUser,
+        resetPassword: resetPassword
     }
 
 });

@@ -14,7 +14,7 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
     if ($scope.activeUser) {
         $scope.showLoginWindow = false;
         $scope.showLogoutButton = true;
-        
+
     } else {
         $scope.showLoginWindow = true;
         $scope.showLogoutButton = false;
@@ -22,8 +22,8 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
 
     $scope.login = function () {
         if ($scope.activeUser) {
-              /** if user is loged in go to user page */
-              $location.path("/userPage");
+            /** if user is loged in go to user page */
+            $location.path("/userPage");
         }
         else {
             userSrv.login($scope.email, $scope.pwd).then(function (activeUser) {
@@ -34,8 +34,8 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
                 $scope.invalidLogin = true;
                 $scope.activeUser = undefined;
             });
-            
-     
+
+
         }
     };
 
@@ -45,7 +45,7 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
         $scope.showLoginWindow = true;
         $scope.showLogoutButton = false;
         $scope.invalidLogin = false;
-        $scope.email ="";
+        $scope.email = "";
         $scope.pwd = "";
         $scope.activeUser = undefined;
     }
@@ -76,5 +76,31 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
         $scope.invalidLogin = false;
     }
 
+
+
+    $scope.resetPassword = function () {
+
+        $scope.email = "";
+        $scope.pwd = "";
+        var modalInstance = $uibModal.open({
+            templateUrl: "app/signUpModal/resetPassword.html",
+            controller: "resetPwdModalCtrl"
+        })
+
+        modalInstance.result.then(function (User) {
+            // this will wake in case the user added a new recipe
+            $location.path("/userPage");
+            $scope.users.push(activeUser);
+        }, function () {
+            // this will wake up in case the user canceled the new recipe
+            console.log("user canceled reset Password");
+        })
+    };
+
+
+    /** call this function to remove valus form email and pw */
+    $scope.newInputUser = function () {
+        $scope.invalidLogin = false;
+    }
 
 });

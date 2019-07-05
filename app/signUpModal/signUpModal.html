@@ -5,25 +5,25 @@
     <div class="modal-body" id="modal-body">
         <label for="name" class="user-names col-sm-4 col-form-label">שם פרטי</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="fist-name" placeholder="הכנס בבקשה שם פרטי" ng-model="signUpFname">
+            <input type="text" class="form-control" id="fist-name" placeholder="הכנס בבקשה שם פרטי" ng-model="fname">
         </div>
         <label for="name" class="user-names col-sm-4 col-form-label">שם משפחה</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="last-name" placeholder="הכנס בבקשה שם משפחה" ng-model="signUpLname">
+            <input type="text" class="form-control" id="last-name" placeholder="הכנס בבקשה שם משפחה" ng-model="lname">
         </div>
         <div class="user-phone col-sm-10">
             <label for="phone">הכנס מספר טלפון:</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{7}">
+            <input type="tel" id="phone" name="phone" ng-model="phone" pattern="[0-9]{3}-[0-9]{7}">
             <p class="m-auto">פורמט להכנסה של מספר טלפון: 054-1111111</p>
         </div>
         <div class="form-group  direction-english">
             <label for="email">Email:</label>
-            <input type="email" class="ml-auto form-control" id="email" ng-model="signUpEmail">
+            <input type="email" ng-init="" class="ml-auto form-control" id="email" ng-model="email">
                <!-- placeholder="Enter email address"> -->
         </div>
         <div class="form-group direction-english">
             <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" ng-model="signUpPwd" >
+            <input type="password" ng-init="" class="form-control" id="pwd" ng-model="pwd" >
             <!-- placeholder="Enter password"> -->
         </div>
     </div>

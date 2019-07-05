@@ -1,0 +1,31 @@
+<div class="modal-update-user">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">טופס עדכון פרטי משתמש</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <label for="name" class="user-names col-sm-4 col-form-label">שם פרטי</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="fist-name" placeholder="הכנס בבקשה שם פרטי" ng-model="fname">
+            </div>
+            <label for="name" class="user-names col-sm-4 col-form-label">שם משפחה</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="last-name" placeholder="הכנס בבקשה שם משפחה" ng-model="lname">
+            </div>
+            <div class="user-phone col-sm-10">
+                <label for="phone">הכנס מספר טלפון:</label>
+                <input type="tel" id="phone" name="phone" ng-model="phone" pattern="[0-9]{3}-[0-9]{7}">
+                <p class="m-auto">פורמט להכנסה של מספר טלפון: 054-1111111</p>
+            </div>
+            <div class="form-group  direction-english">
+                <label for="email">Email:</label>
+                <input type="email" ng-init="" class="ml-auto form-control" id="email" ng-model="email">
+                   <!-- placeholder="Enter email address"> -->
+            </div>           
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary ml-auto" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning mr-auto" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+        <div class="modal-parent">
+        </div>
+    </div>
