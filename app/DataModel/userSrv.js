@@ -2,7 +2,7 @@
 app.factory("userSrv", function ($q) {
 
     var activeUser = null;
-
+    
     function User(user) {
         this.usertId = user.id;
         this.fullName = user.get("username");
@@ -22,7 +22,7 @@ app.factory("userSrv", function ($q) {
         var async = $q.defer();
 
         activeUser = null;
-
+        
         // Pass the username and password to logIn function
         Parse.User.logIn(email, pwd).then(function (user) {
             // Do stuff after successful login

@@ -10,7 +10,7 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
 
     /** If user is logged in Go to new page - user page on Home logo */
     $scope.activeUser = userSrv.getActiveUser();
-
+    
     if ($scope.activeUser) {
         $scope.showLoginWindow = false;
         $scope.showLogoutButton = true;

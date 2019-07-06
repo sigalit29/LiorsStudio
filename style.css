@@ -1,4 +1,5 @@
 /* לגרום לדף להיות מימין לשמאל בשביל העברית */
+
 body {
     direction: rtl;
     text-align: right;
@@ -31,7 +32,7 @@ h1 {
 
 /*--- All backround images for all pages------------------------*/
 
-.landing-img, .user-img, .weekly-img, .teachers-img {
+.landing-img, .user-img, .weekly-img, .teachers-img, .weekly-updates {
     padding-top: 35px;
     margin-bottom: auto;
     background-image: url("Images/LandingImgOrigin.jpg");
@@ -47,6 +48,8 @@ h1 {
 
 .weekly-img {
     background-image: url("Images/P3288273.jpg");
+    padding: 0!important;
+    margin: 0!important;
 }
 
 .teachers-img {
@@ -67,7 +70,6 @@ h1 {
     padding-right: 25px;
 }
 
- 
 .modal-photo-gallery button, .login button, .user-buttons {
     font-size: 0.9em;
 }
@@ -92,18 +94,20 @@ h1 {
 }
 
 /* placeholder*/
+
 #last-name, #fist-name {
     font-size: 1.1em;
     font-family: 'Kreon', serif;
 }
 
-.user-phone, .user-names{
+.user-phone, .user-names {
     font-size: 1.2em;
     padding-top: 20px;
     padding-right: 20px;
     font-weight: bold;
 }
-#phone{
+
+#phone {
     letter-spacing: 1.3px;
     font-size: 1.0em;
 }
@@ -117,6 +121,25 @@ h1 {
     margin: right;
     height: 400px;
     width: 280px;
+}
+
+/*--- Weekly Activities --------------------*/
+
+.weekly-updates {
+    padding: 0!important;
+    width: 80%;
+    height: 30%;
+    margin: auto!important;
+    color: rgb(240, 231, 231);
+    background-image: url("Images/woodenFrame.jpg");
+    background-size: 100% 74%;
+}
+
+.weekly-updates>h2 {
+    font-size: 2.1em;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2.5rem;
 }
 
 /*--- Teachers page CSS's------------------------*/
@@ -164,9 +187,7 @@ h1 {
     font-size: 1.3em;
 }
 
-.modal-photo-gallery, .deltete-slide-modal,
- .deltete-slide-modal, .modal-sign-up,
- .modal-reset-psw, .modal-update-user {
+.modal-photo-gallery, .deltete-slide-modal, .deltete-slide-modal, .modal-sign-up, .modal-reset-psw, .modal-update-user {
     background-color: rgb(82, 77, 77);
     color: rgb(235, 210, 210);
     letter-spacing: 1.5px;
@@ -179,7 +200,7 @@ h1 {
 }
 
 .deltete-slide-modal {
-    background-color: rgb(153, 79, 79);  
+    background-color: rgb(153, 79, 79);
 }
 
 .interval-input input, #user-text {
@@ -187,7 +208,7 @@ h1 {
     max-width: 25%;
 }
 
-.delete-msg{
+.delete-msg {
     letter-spacing: 1.5px;
     font-size: 1.5em;
     text-align: center;
@@ -195,13 +216,15 @@ h1 {
     color: rgb(235, 210, 210);
 }
 
-#user-text{
+#user-text {
     max-width: 60%;
     font-weight: bold;
     letter-spacing: 1.3px;
 }
-.fa-trash{
-    color:red;
+
+.fa-trash {
+    color: red;
     max-width: 60%;
-  }
+}
+
 /*--- Workshops page CSS's------------------------*/
