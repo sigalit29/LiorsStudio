@@ -144,13 +144,13 @@ h1 {
 }
 
 .inner-weekly-text {
-    font-weight: 900;
+    font-weight: bold;
     text-align: right;
     letter-spacing: 1.4px;
     padding-right: 18%;
     padding-left: 8%;
     color: rgb(240, 233, 221);
-    font-size: 2.0rem;
+    font-size: 1.9rem;
     width: 90%;
     height: 30%;
 }

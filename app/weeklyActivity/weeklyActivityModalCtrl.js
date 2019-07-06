@@ -3,7 +3,7 @@ app.controller("weeklyActivityModalCtrl", function ($scope, $uibModalInstance) {
     $scope.animationsEnabled = true;
     $scope.weeklyText = "";
 
-    $scope.ok = function () {
+    $scope.ok = function () {          
         $uibModalInstance.close($scope.weeklyText);
     };
 
