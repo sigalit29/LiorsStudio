@@ -34,7 +34,7 @@ h1 {
 .landing-img, .user-img, .weekly-img, .teachers-img {
     padding-top: 35px;
     margin-bottom: auto;
-    background-image: url("../Images/LandingImgOrigin.jpg");
+    background-image: url("Images/LandingImgOrigin.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     padding-right: 3px;
@@ -42,15 +42,15 @@ h1 {
 }
 
 .user-img {
-    background-image: url("../Images/P3010006.jpg");
+    background-image: url("Images/P3010006.jpg");
 }
 
 .weekly-img {
-    background-image: url("../Images/P3288273.jpg");
+    background-image: url("Images/P3288273.jpg");
 }
 
 .teachers-img {
-    background-image: url("../Images/P3010063.jpg");
+    background-image: url("Images/P3010063.jpg");
 }
 
 /*--- NavBar CSS's------------------------*/
