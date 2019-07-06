@@ -48,8 +48,7 @@ app.factory("photoSlideSrv", function ($q) {
         newSlid.set('image', new Parse.File("userImg" + slideIndex + ".jpg", { base64: slide.image }));
 
         // Actual saving the new slide in Parse
-        newSlid.save().then(
-            function (result) {
+        newSlid.save().then(function (result) {
                 console.log('slide created', slide.text);
                 async.resolve(new Slide(result));
             },
