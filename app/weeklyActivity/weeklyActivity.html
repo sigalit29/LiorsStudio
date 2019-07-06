@@ -1,16 +1,12 @@
 <div class="weekly-activity">
     <h1> השבוע בסטודיו</h1>
     <div class="weekly-img jumbotron jumbotron-fluid">
-        <div class="weekly-updates">
+        <div class="weekly-updates" ng-click="openUpdateText()">
             <hr>
             <!-- <img class="wooden-bord img-fluid rounded d-block" src="Images/woodenFrame.jpg" alt="woodenBord" > -->
             <h2>הודעות מיוחדות לשבוע הקרוב:</h2>
             <h4 class="inner-weekly-text">
-                מזכירה כי ב4/7 יום חמישי בשעה 19:00 אייל צ׳חנובסקי יגיע ללמד בסטודיו למי שמתעניין בקורס המורים שיפתח
-                ב24/10/19
-                אנא הרשמו בפרטי. או אשרו הגעתכם.
-                מי שלא יכול להגיע בתאריך זה , אייל יקבע תאריך נוסף בהמשך.
-
+                {{userText}}
             </h4>
         </div>
         <div class="weekly-calender">

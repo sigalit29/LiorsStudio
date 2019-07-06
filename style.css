@@ -130,13 +130,12 @@ h1 {
     width: 80%;
     height: 30%;
     margin: auto!important;
-    
     background-image: url("Images/woodenFrame.jpg");
     background-size: 100% 100%;
 }
 
 .weekly-updates>h2 {
-    font-size: 2.5em;
+    font-size: 2.6em;
     text-align: center;
     font-weight: 900;
     padding-top: 3.8rem;
@@ -144,18 +143,17 @@ h1 {
     color: rgb(235, 210, 210);
 }
 
-.inner-weekly-text{
+.inner-weekly-text {
     font-weight: 900;
     text-align: right;
     letter-spacing: 1.4px;
     padding-right: 18%;
     padding-left: 8%;
-    color:rgb(240, 233, 221);
+    color: rgb(240, 233, 221);
     font-size: 2.0rem;
     width: 90%;
     height: 30%;
 }
-
 
 /*--- Teachers page CSS's------------------------*/
 
@@ -202,7 +200,8 @@ h1 {
     font-size: 1.3em;
 }
 
-.modal-photo-gallery, .deltete-slide-modal, .deltete-slide-modal, .modal-sign-up, .modal-reset-psw, .modal-update-user {
+.modal-photo-gallery, .deltete-slide-modal, .deltete-slide-modal, .modal-sign-up,
+.modal-reset-psw, .modal-update-user, .modal-weekly-activitiy {
     background-color: rgb(82, 77, 77);
     color: rgb(235, 210, 210);
     letter-spacing: 1.5px;
