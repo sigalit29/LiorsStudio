@@ -1,34 +1,37 @@
 <div class="landing-img jumbotron">
     <div class="login">
         <h1>כניסה לאתר</h1>
+
         <div class="alert alert-danger" role="alert" ng-show="invalidLogin && showLoginWindow">
             בעיה עם פרטי משתמש! password או email לא תקינים
         </div>
-        <form class="login-form" ng-show="showLoginWindow">
-            <div class="form-group  direction-english">
+        <form class="login-form" ng-submit="login()" ng-show="showLoginWindow">
+            <div tabindex="0" class="form-group  direction-english">
                 <label for="email">Email:</label>
                 <input type="email" class="ml-auto form-control" ng-change="newInputUser()" id="email" ng-model="email"
                     placeholder="Enter email address">
             </div>
-            <div class="form-group direction-english">
+            <div tabindex="1" class="form-group direction-english">
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" id="pwd" ng-change="newInputUser()" ng-model="pwd"
                     placeholder="Enter password">
             </div>
+            <div tabindex="2">
+                <button type="button" class="btn btn-block" ng-click="login()">כניסה לאזור
+                    אישי</button>
+            </div>
+
         </form>
-        <hr>
-        <form class="enter-user-page">
-            <button type="button" class="btn btn-success btn-block" ng-click="login()">כניסה לאזור אישי</button>
-        </form>
-        <hr>
+
         <form class="logout-form" ng-show="showLogoutButton">
-            <button type="button" class="btn btn-warning btn-block" ng-click="logout()">יציאה מחשבון</button>
+            <button type="button" class="btn  btn-block" ng-click="logout()">יציאה מחשבון</button>
         </form>
-      
+
         <span class="text-center btn-block"> או </span>
         <hr>
-        <button type="button" class="btn btn-warning btn-block" ng-click="resetPassword()">אפס סיסמא</button>
-        <button type="button" class="btn btn-warning btn-block" ng-click="createAccount()">צור משתמש חדש</button>
+        <button type="button" class="btn  btn-block" ng-click="resetPassword()">אפס סיסמא</button>
+        <button type="button" class="btn  btn-block" ng-click="createAccount()" ng-show="showLoginWindow">צור
+            משתמש חדש</button>
         </form>
     </div>
 </div>

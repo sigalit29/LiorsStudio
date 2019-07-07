@@ -89,6 +89,25 @@ h1 {
     font-size: 1.8em;
 }
 
+.login button{
+    background-image: -webkit-linear-gradient(top, rgb(88, 72, 54),  rgb(66, 65, 65)); 
+    background-image: -moz-linear-gradient(top,  rgb(88, 72, 54),  rgb(66, 65, 65));
+    -webkit-border-radius: 28;  -moz-border-radius: 28;  border-radius: 28px;
+    /* text-shadow: 3px 2px 1px #9daef5; */
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666; 
+    box-shadow: 6px 5px 24px #666666;
+    font-weight: 900;
+    
+}
+.btn:hover {
+    background:   rgb(235, 210, 210);
+    background-image: -webkit-linear-gradient(top, rgb(66, 65, 65), rgb(88, 72, 54)); 
+    background-image: -moz-linear-gradient(top,  rgb(66, 65, 65),   rgb(88, 72, 54));   
+    text-decoration: none;
+}
+
+
 .login h1 {
     font-size: 1.5em;
 }
@@ -140,7 +159,7 @@ h1 {
     font-weight: 900;
     padding-top: 3.8rem;
     margin: 0!important;
-    color: rgb(235, 210, 210);
+    color: rgb(253, 251, 251);
 }
 
 .inner-weekly-text{
@@ -149,7 +168,7 @@ h1 {
     letter-spacing: 1.4px;
     padding-right: 18%;
     padding-left: 8%;
-    color: rgb(240, 233, 221);
+    color: rgb(248, 246, 242);
     font-size: 1.9rem;
     width: 90%;
     height: 30%;
@@ -178,9 +197,10 @@ h1 {
 }
 
 .teachers>.teachers-img>.card {
-    width: 30rem;
+    width: 50rem;
     margin: right;
     font-size: 1.6em;
+    margin-top: 2vh;
 }
 
 .teachers>.teachers-img>.card>.list-group {
