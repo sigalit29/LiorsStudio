@@ -89,7 +89,7 @@ h1 {
     font-size: 1.8em;
 }
 
-.login button , .photo-gallery-btn{
+.login button, .photo-gallery-btn {
     background: white;
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
@@ -106,13 +106,15 @@ h1 {
     text-decoration: none;
 }
 
-.btn-border-red{
+.btn-border-red {
     border-color: crimson;
 }
-.btn-border-green{
+
+.btn-border-green {
     border-color: rgb(96, 179, 96);
 }
-.btn-border-yellow{
+
+.btn-border-yellow {
     border-color: rgb(230, 230, 23);
 }
 
@@ -198,20 +200,17 @@ h1 {
     height: 5%;
 }
 
-.teachers>.teachers-img>.card>img {
-    padding-top: 2rem;
+.teachers>.teachers-img>.col-md-6>.card>img {
+    padding-top: 4rem;
     padding-bottom: 2rem;
+    max-width: 18rem;
+    margin: auto;
 }
 
-.teachers>.teachers-img>.card {
-    width: 50rem;
-    margin: right;
+.teachers>.teachers-img>.col-md-6>.card {
     font-size: 1.6em;
     margin-top: 2vh;
-}
-
-.teachers>.teachers-img>.card>.list-group {
-    font-size: 1.2em;
+    margin-right: 5vh;
 }
 
 /*--- Photo Gallery page CSS's------------------------*/
