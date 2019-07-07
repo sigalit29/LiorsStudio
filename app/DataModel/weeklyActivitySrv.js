@@ -1,7 +1,7 @@
 app.factory("weeklyActivitySrv", function ($q) {
 
     var weeklyActivityObj = null;
-   
+
 
     class WeeklyActivity {
         constructor(parseWeekly) {
@@ -11,7 +11,7 @@ app.factory("weeklyActivitySrv", function ($q) {
         }
     }
 
-    function UpdateWeeklyData(newText, newImage) {
+    function UpdateWeeklyImage(newImage) {
 
         var async = $q.defer();
 
@@ -19,24 +19,43 @@ app.factory("weeklyActivitySrv", function ($q) {
         const query = new Parse.Query(WeeklyActivity);
         // here you put the objectId that you want to update
         query.get(weeklyActivityObj.parseWeeklyId).then((object) => {
-          object.set('WeeklyUpdates', newText);  
-          object.set('WeeklyImage', new Parse.File("ActivityImg.png", { base64: newImage }));
-       
-          object.save().then((response) => {
-            console.log('Updated WeeklyActivity', response);
-             weeklyActivityObj.weeklyUpdates = newText;
-             weeklyActivityObj.weeklyImg = newImage;
-            async.resolve(weeklyActivityObj);
-          }, (error) => {
-            console.error('Error while updating WeeklyActivity', error);
-            async.reject(error);
-          });
-        });           
-     
+            object.set('WeeklyImage', new Parse.File("ActivityImg.png", { base64: newImage }));
+
+            object.save().then((response) => {
+                console.log('Updated WeeklyActivity', response);
+                weeklyActivityObj.weeklyImg = newImage;
+                async.resolve(weeklyActivityObj);
+            }, (error) => {
+                console.error('Error while updating WeeklyActivity', error);
+                async.reject(error);
+            });
+        });
+
         return async.promise;
     }
 
 
+    function UpdateWeeklyText(newText) {
+
+        var async = $q.defer();
+
+        const WeeklyActivity = Parse.Object.extend('WeeklyActivity');
+        const query = new Parse.Query(WeeklyActivity);
+        // here you put the objectId that you want to update
+        query.get(weeklyActivityObj.parseWeeklyId).then((object) => {
+            object.set('WeeklyUpdates', newText);
+            object.save().then((response) => {
+                console.log('Updated WeeklyActivity', response);
+                weeklyActivityObj.weeklyUpdates = newText;               
+                async.resolve(weeklyActivityObj);
+            }, (error) => {
+                console.error('Error while updating WeeklyActivity', error);
+                async.reject(error);
+            });
+        });
+
+        return async.promise;
+    }
 
 
 
@@ -60,7 +79,8 @@ app.factory("weeklyActivitySrv", function ($q) {
     }
 
     return {
-        UpdateWeeklyData: UpdateWeeklyData,
+        UpdateWeeklyImage: UpdateWeeklyImage,
+        UpdateWeeklyText: UpdateWeeklyText,
         getWeeklyData: getWeeklyData
     }
 
