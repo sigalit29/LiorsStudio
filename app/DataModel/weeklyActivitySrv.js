@@ -1,6 +1,7 @@
 app.factory("weeklyActivitySrv", function ($q) {
 
     var weeklyActivityObj = null;
+   
 
     class WeeklyActivity {
         constructor(parseWeekly) {
@@ -18,7 +19,7 @@ app.factory("weeklyActivitySrv", function ($q) {
         const query = new Parse.Query(WeeklyActivity);
         // here you put the objectId that you want to update
         query.get(weeklyActivityObj.parseWeeklyId).then((object) => {
-        //   object.set('WeeklyUpdates', newText);  
+          object.set('WeeklyUpdates', newText);  
           object.set('WeeklyImage', new Parse.File("ActivityImg.png", { base64: newImage }));
        
           object.save().then((response) => {
