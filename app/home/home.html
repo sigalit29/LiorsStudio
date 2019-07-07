@@ -17,20 +17,20 @@
                     placeholder="Enter password">
             </div>
             <div tabindex="2">
-                <button type="button" class="btn btn-block" ng-click="login()">כניסה לאזור
+                <button type="button" class="btn btn-border-green btn-block " ng-click="login()">כניסה לאזור
                     אישי</button>
             </div>
 
         </form>
 
         <form class="logout-form" ng-show="showLogoutButton">
-            <button type="button" class="btn  btn-block" ng-click="logout()">יציאה מחשבון</button>
+            <button type="button" class="btn btn-border-red btn-block" ng-click="logout()">יציאה מחשבון</button>
         </form>
 
         <span class="text-center btn-block"> או </span>
         <hr>
-        <button type="button" class="btn  btn-block" ng-click="resetPassword()">אפס סיסמא</button>
-        <button type="button" class="btn  btn-block" ng-click="createAccount()" ng-show="showLoginWindow">צור
+        <button type="button" class="btn btn-border-yellow btn-block" ng-click="resetPassword()">אפס סיסמא</button>
+        <button type="button" class="btn btn-border-green btn-block" ng-click="createAccount()" ng-show="showLoginWindow">צור
             משתמש חדש</button>
         </form>
     </div>
