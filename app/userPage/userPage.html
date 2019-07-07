@@ -3,10 +3,10 @@
         <h1> שלום {{userFname}} , הגעת לסטודיו של ליאור</h1>
         <form>
             <div class="form-group user-buttons">
-                <button type="button" class="btn btn-success btn-block" ng-click="">עדכון פרטים אישיים</button>
-                <hr>
-                <button type="button" class="btn btn-success btn-block" ng-click="">צפייה בכרטיסיה</button>
+                <button type="button" class="btn btn-success btn-block" ng-click="updateUserData()">עדכון פרטים אישיים</button>
+              
+                <button type="button" ng-show="multipleEntryTicket" class="btn btn-success btn-block" ng-click="">צפייה
+                    בכרטיסיה</button>
         </form>
     </div>
-</div>
 </div>
