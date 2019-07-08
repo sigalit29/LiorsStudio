@@ -5,7 +5,7 @@
         <div class="alert alert-danger" role="alert" ng-show="invalidLogin && showLoginWindow">
             בעיה עם פרטי משתמש! password או email לא תקינים
         </div>
-        <form class="login-form" ng-submit="login()" ng-show="showLoginWindow">
+        <form class="login-form" ng-show="showLoginWindow">
             <div tabindex="0" class="form-group  direction-english">
                 <label for="email">Email:</label>
                 <input type="email" class="ml-auto form-control" ng-change="newInputUser()" id="email" ng-model="email"
