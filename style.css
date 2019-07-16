@@ -16,7 +16,6 @@ h1, .media-body h2 {
     max-width: 100%;
 }
 
-
 /* General change to english class for form use*/
 
 .direction-english {
@@ -34,7 +33,7 @@ h1, .media-body h2 {
 
 /*--- All backround images for all pages------------------------*/
 
-.landing-img, .user-img, .weekly-img, .teachers-img, .weekly-updates {
+.landing-img, .user-img, .weekly-img {
     padding-top: 35px;
     margin-bottom: auto;
     background-image: url("Images/LandingImgOrigin.jpg");
@@ -55,18 +54,19 @@ h1, .media-body h2 {
 }
 
 .teachers-img {
-    background-image: url("Images/P3010063.jpg");
+    background-color: rgb(138, 100, 3);
 }
 
 /*--- NavBar CSS's------------------------*/
-.navbar{
+
+.navbar {
     width: 100%;
 }
 
 .nav-item {
     font-family: 'Amatic SC', cursive;
-    font-size: 3em;
-    font-weight: bold;
+    font-size: 2.3em;
+    font-weight: 900;
     letter-spacing: 2.5px;
 }
 
@@ -160,19 +160,18 @@ h1, .media-body h2 {
 /*--- Weekly Activities --------------------*/
 
 .weekly-updates {
-    padding: 0!important;
-    width: 80%;
-    height: 30%;
-    margin: auto!important;
+    width: 100%;
+    height: 30rem;
     background-image: url("Images/woodenFrame.jpg");
     background-size: 100% 100%;
+    padding-top: 2rem;
 }
 
 .weekly-updates>h2 {
-    font-size: 2.6em;
+    padding-top: 6rem;
+    font-size: 2.6rem;
     text-align: center;
-    font-weight: 900;
-    padding-top: 3.8rem;
+    font-weight: 600;
     margin: 0!important;
     color: rgb(253, 251, 251);
 }
@@ -180,20 +179,28 @@ h1, .media-body h2 {
 .inner-weekly-text {
     font-weight: bold;
     text-align: right;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.3px;
     padding-right: 18%;
     padding-left: 8%;
     color: rgb(248, 246, 242);
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     width: 90%;
     height: 30%;
 }
 
 .modal-activity-text {
     letter-spacing: 1.4px;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 600;
     text-align: right;
+}
+
+.weekly-img {
+    max-height: 1050px;
+}
+
+.weekly-calender {
+    padding-top: 2rem;
 }
 
 /*--- Teachers page CSS's------------------------*/
@@ -215,7 +222,8 @@ h1, .media-body h2 {
 .teachers>.teachers-img>.col-md-6>.card {
     font-size: 1.6em;
     margin-top: 2vh;
-    margin-right: 5vh;
+    margin-right: 2rem;
+    margin-left: 2rem;
 }
 
 /*--- Photo Gallery page CSS's------------------------*/
@@ -281,9 +289,9 @@ h1, .media-body h2 {
 
 /*--- Workshops page CSS's------------------------*/
 
-.workshops h2{
-    text-align: right; 
-    font-size: 1.6em; 
+.workshops h2 {
+    text-align: right;
+    font-size: 1.6em;
     font-weight: 600;
     background-color: rgb(82, 77, 77);
     padding-right: 0.5%;
