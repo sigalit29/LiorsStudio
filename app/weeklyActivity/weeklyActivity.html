@@ -1,14 +1,14 @@
 <div class="weekly-activity">
     <h1> השבוע בסטודיו</h1>
-    <div class="weekly-updates" ng-click="openUpdateText()">
-        <hr>
-        <h2>הודעות לשבוע הקרוב</h2>
-        <h4 class="inner-weekly-text">
-            {{userText}}
-        </h4>
-        <hr>
-    </div>
     <div class="weekly-img">
+        <div class="weekly-updates" ng-click="openUpdateText()">
+            <hr>
+            <h2>הודעות לשבוע הקרוב</h2>
+            <h4 class="inner-weekly-text">
+                {{userText}}
+            </h4>
+            <hr>
+        </div>
         <div class="weekly-calender">
             <img class="img-fluid rounded mx-auto d-block" ng-click="openUpdateImage()" src="{{weeklyImage}} "
                 alt="weeklyBord">
