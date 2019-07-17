@@ -1,11 +1,11 @@
 app.controller("updateModalCtrl", function ($scope, $uibModalInstance, userSrv) {
-
+    var userData = $scope.$resolve.userData;
     $scope.animationsEnabled = true;
 
-    $scope.email = "";
-    $scope.fname = "";
-    $scope.lname = "";
-    $scope.phone = "";
+    $scope.email = userData.email;
+    $scope.fname = userData.fname;
+    $scope.lname = userData.lname;
+    $scope.phone = " ";
 
     $scope.cancel = function () {
         $uibModalInstance.dismiss();
