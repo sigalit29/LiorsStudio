@@ -156,21 +156,21 @@ h1, .media-body h2 {
 /*--- Weekly Activities --------------------*/
 
 .weekly-updates { 
-    height: 20rem;  
+    max-height: 20rem; 
     padding-top: 4rem;
 }
 
 .weekly-updates>h2 {
     padding-top: 3rem;
-    font-size: 2.4rem;
+    font-size: 2.3rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0!important;
     color: rgb(253, 251, 251);
 }
 
 .inner-weekly-text {
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
     letter-spacing: 1.3px;
     padding-right: 18%;
