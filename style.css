@@ -157,7 +157,7 @@ h1, .media-body h2 {
 
 .weekly-updates { 
     max-height: 20rem; 
-    padding-top: 4rem;
+    padding-top: 1rem;
 }
 
 .weekly-updates>h2 {
@@ -178,7 +178,7 @@ h1, .media-body h2 {
     color: rgb(248, 246, 242);
     font-size: 1.7rem;
     width: 90%;
-    height: 30%;
+    height: 25%;
 }
 
 .modal-activity-text {
@@ -193,7 +193,10 @@ h1, .media-body h2 {
 }
 
 .weekly-calender {
-    padding-top: 2rem;
+    padding-top: 1rem;
+    max-width: 85%;
+    /* max-height: 80%; */
+    margin:auto;
 }
 
 /*--- Teachers page CSS's------------------------*/
