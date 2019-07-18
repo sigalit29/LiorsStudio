@@ -18,6 +18,9 @@ app.config(function($routeProvider) {
     }).when("/workshops", {
         templateUrl: "app/workshops/workshops.html",
         controller: "workshopsCtrl"
+    }).when("/priceList", {        
+        templateUrl: "app/priceList/priceList.html",
+        controller: "priceListCtrl"        
     }).when("/photoGallery", {
         templateUrl: "app/photoGallery/photoGallery.html",
         controller: "photoGalleryCtrl"
