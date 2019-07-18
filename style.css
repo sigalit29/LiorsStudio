@@ -232,7 +232,7 @@ h1, .media-body h2 {
 /*--- Photo Gallery page CSS's------------------------*/
 
 .photo-gallery {
-    max-width: 60%;
+    max-width:75%;
     margin: auto;
 }
 
@@ -242,12 +242,14 @@ h1, .media-body h2 {
 
 .photo-gallery-btn {
     margin-top: 2vh;
+    margin-bottom: 2vh;
     margin-right: 2vh;
     color: rgb(235, 210, 210);
     margin: top;
-    height: 60px;
-    width: 200px;
+    height: 3rem;
+    width: 18rem;
     font-size: 1.3em;
+    padding-top: 0;
 }
 
 .modal-photo-gallery, .deltete-slide-modal, .deltete-slide-modal, .modal-sign-up, .modal-reset-psw, .modal-update-user, .modal-weekly-activitiy, .modal-weekly-activitiy-image {
