@@ -315,7 +315,7 @@ h1, .media-body h2 {
 
 .price-list-content {
     margin-top: 2%;
-    margin-right: 50%;
+    margin-left: 50%;
     max-height: 100rem;
     width: 32rem;
 }
