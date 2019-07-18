@@ -313,8 +313,8 @@ h1, .media-body h2 {
 
 /*--------------price list----------------*/
 
-.price-list-content {
-    margin-top: 2%;
+.price-list-content {   
+    margin: auto;
 }
 
 .price-list-content>p {
@@ -332,6 +332,6 @@ h1, .media-body h2 {
     text-align: right;
 }
 
-.price-box {
-    padding-right: 2vmin;
-}
+/* .price-box {    
+    
+} */
