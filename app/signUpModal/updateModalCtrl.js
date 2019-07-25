@@ -5,7 +5,7 @@ app.controller("updateModalCtrl", function ($scope, $uibModalInstance, userSrv) 
     $scope.email = userData.email;
     $scope.fname = userData.fname;
     $scope.lname = userData.lname;
-    $scope.phone = " ";
+    $scope.phone = userData.phone;
 
     $scope.cancel = function () {
         $uibModalInstance.dismiss();

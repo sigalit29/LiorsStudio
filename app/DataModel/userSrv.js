@@ -9,7 +9,7 @@ app.factory("userSrv", function ($q) {
         this.fname = user.get("fname");
         this.lname = user.get("lname");
         this.email = user.get("email");
-        this.phone = user.set("userPhone");
+        this.phone = user.get("userPhone");
     }
 
 
