@@ -33,7 +33,7 @@ h1, .media-body h2 {
 
 /*--- All backround images for all pages------------------------*/
 
-.landing-img, .user-img, .weekly-img, .price-img {
+.landing-img, .user-img, .weekly-img, .price-img, .users-img {
     padding-top: 35px;
     margin-bottom: auto;
     background-image: url("Images/LandingImgOrigin.jpg");
@@ -43,7 +43,7 @@ h1, .media-body h2 {
     height: 70rem;
 }
 
-.user-img {
+.user-img, .users-img {
     background-image: url("Images/P3010006.jpg");
 }
 
@@ -158,24 +158,30 @@ h1, .media-body h2 {
 }
 
 .table-users {
+    table-layout: fixed;
+    color: rgb(235, 210, 210);
     border: none;
-    width: 100%;
-    font-size: 12px;
+    width: 60%;
+    font-size: 1.5em;
+}
+.thead-users{
+    background-color: rgb(104, 14, 187);
 }
 
-.thead-users{
-    line-height:52px;
+
+.thead-users {
+    line-height: 52px;
 }
 
 .th-users {
-    text-align: center;   
+    text-align: center;
     line-height: 42px;
-    padding: 20px;
-  }
+    padding: 6px;
+}
 
 .td-users {
-    text-align: right; 
-   }
+    text-align: right;
+}
 
 .tr-users {
     line-height: 42px;
@@ -183,8 +189,6 @@ h1, .media-body h2 {
     box-shadow: 0px 6px 3px -5px rgba(26, 0, 0, 0.5);
     text-align: center;
 }
-
-
 
 /*--- Weekly Activities --------------------*/
 
@@ -261,7 +265,7 @@ h1, .media-body h2 {
 /*--- Photo Gallery page CSS's------------------------*/
 
 .photo-gallery {
-    max-width:75%;
+    max-width: 75%;
     margin: auto;
 }
 
@@ -344,7 +348,7 @@ h1, .media-body h2 {
 
 /*--------------price list----------------*/
 
-.price-list-content {   
+.price-list-content {
     margin: auto;
 }
 

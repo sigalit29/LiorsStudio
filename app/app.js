@@ -11,7 +11,7 @@ app.config(function($routeProvider) {
         controller: "userPageCtrl"
     }).when("/usersTable", {                     
         templateUrl: "app/userPage/usersTable.html",
-        controller: "userTableCtrl"
+        controller: "usersTableCtrl"
     }).when("/teachers", {
         templateUrl: "app/teachers/teachers.html",
         controller: "teachersCtrl"
