@@ -9,6 +9,9 @@ app.config(function($routeProvider) {
     }).when("/userPage", {                     
         templateUrl: "app/userPage/userPage.html",
         controller: "userPageCtrl"
+    }).when("/usersTable", {                     
+        templateUrl: "app/userPage/usersTable.html",
+        controller: "userTableCtrl"
     }).when("/teachers", {
         templateUrl: "app/teachers/teachers.html",
         controller: "teachersCtrl"

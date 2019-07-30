@@ -2,7 +2,7 @@
 app.factory("userSrv", function ($q) {
 
     var activeUser = null;
-    
+
     function User(user) {
         this.usertId = user.id;
         this.fullName = user.get("username");
@@ -23,7 +23,7 @@ app.factory("userSrv", function ($q) {
         var async = $q.defer();
 
         activeUser = null;
-        
+
         // Pass the username and password to logIn function
         Parse.User.logIn(email, pwd).then(function (user) {
             // Do stuff after successful login
@@ -44,6 +44,24 @@ app.factory("userSrv", function ($q) {
 
     function getActiveUser() {
         return activeUser;
+    }
+
+
+    function getAllUsers() {
+        
+        var async = $q.defer();
+        const User = new Parse.User();
+        const query = new Parse.Query(User);
+
+        query.find().then((users) => {
+            console.log('Users found', users);
+            async.resolve(users);
+        }, (error) => {
+            console.error('Error while fetching user', error);
+            async.reject(error);
+        });
+
+        return async.promise;
     }
 
 
@@ -72,18 +90,18 @@ app.factory("userSrv", function ($q) {
     }
 
     /*-- Reset PW service   -*/
-    function resetPassword(email, pwd) {
+    function resetUserPassword(email) {
         var async = $q.defer();
-        function resetPassword() {
-            Parse.User.requestPasswordReset(email).then(function() {
-              console.log("Password reset request was sent successfully");
-              async.resolve(activeUser);
-            }).catch(function(error) {
-              console.log("The login failed with error: " + error.code + " " + error.message);
-              async.reject(error);
-            });
-        }
-     
+
+        Parse.User.requestPasswordReset(email).then(function () {
+            console.log("Password reset request was sent successfully");
+            async.resolve(activeUser);
+        }).catch(function (error) {
+            console.log("The login failed with error: " + error.code + " " + error.message);
+            async.reject(error);
+        });
+
+
         return async.promise;
     }
 
@@ -126,9 +144,10 @@ app.factory("userSrv", function ($q) {
         login: login,
         logout: logout,
         getActiveUser: getActiveUser,
+        getAllUsers: getAllUsers,
         addNewUser: addNewUser,
         updateUser: updateUser,
-        resetPassword: resetPassword
+        resetUserPassword: resetUserPassword
     }
 
 });

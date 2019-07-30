@@ -5,7 +5,6 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
     $scope.multipleEntryTicket = false;
 
     $scope.updateUserData = function () {
-
         $scope.email = "";
         $scope.pwd = "";
         var modalInstance = $uibModal.open({
@@ -24,7 +23,6 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
         })
 
 
-
         modalInstance.result.then(function (User) {
             // this will wake in case the user added a new recipe
             console.log(User);
@@ -33,5 +31,9 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
             console.log("user canceled reset Password");
         })
     };
+
+    $scope.GoToUsersTable = function () {
+        $location.path("/usersTable");
+    }
 
 })

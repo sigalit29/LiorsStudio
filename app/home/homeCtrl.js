@@ -77,7 +77,6 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
     }
 
 
-
     $scope.resetPassword = function () {
 
         $scope.email = "";
@@ -88,14 +87,15 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
         })
 
         modalInstance.result.then(function (User) {
-            // this will wake in case the user added a new recipe
+            // this will wake in case the user resets his pw
             $location.path("/userPage");
             $scope.users.push(activeUser);
         }, function () {
-            // this will wake up in case the user canceled the new recipe
-            console.log("user canceled reset Password");
+            // this will wake up in case the user canceled the pw reset or prosess failed
+            console.log("user reset Password failed");
         })
     };
+   
 
 
     /** call this function to remove valus form email and pw */

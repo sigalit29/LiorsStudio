@@ -15,7 +15,6 @@ app.controller("updateModalCtrl", function ($scope, $uibModalInstance, userSrv) 
       
         userSrv.updateUser($scope.fname, $scope.lname, $scope.email, $scope.phone).then(function (newUser) {
             $uibModalInstance.close(newUser);
-
         });
     };
 

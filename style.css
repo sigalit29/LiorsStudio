@@ -157,6 +157,35 @@ h1, .media-body h2 {
     width: 280px;
 }
 
+.table-users {
+    border: none;
+    width: 100%;
+    font-size: 12px;
+}
+
+.thead-users{
+    line-height:52px;
+}
+
+.th-users {
+    text-align: center;   
+    line-height: 42px;
+    padding: 20px;
+  }
+
+.td-users {
+    text-align: right; 
+   }
+
+.tr-users {
+    line-height: 42px;
+    padding: 20px;
+    box-shadow: 0px 6px 3px -5px rgba(26, 0, 0, 0.5);
+    text-align: center;
+}
+
+
+
 /*--- Weekly Activities --------------------*/
 
 .weekly-updates {

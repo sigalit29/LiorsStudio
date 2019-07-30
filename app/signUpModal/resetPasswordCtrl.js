@@ -10,7 +10,7 @@ app.controller("resetPwdModalCtrl", function ($scope, $uibModalInstance, userSrv
     };
 
     $scope.ok = function () {
-        userSrv.resetPassword($scope.email, $scope.pwd).then(function () {
+        userSrv.resetUserPassword($scope.email, $scope.pwd).then(function () {
              
         });
         $uibModalInstance.dismiss();    
