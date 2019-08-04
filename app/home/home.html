@@ -30,12 +30,14 @@
 
         </form>
 
-        <span class="text-center btn-block"> או </span>
+        <span ng-show="showLoginWindow" class="text-center btn-block"> או </span>
         <hr>
+        <div class="no-active-user" ng-show="showLoginWindow">
         <button type="button" class="btn btn-border-yellow btn-block" ng-click="resetPassword()">אפס סיסמא</button>
         <button type="button" class="btn btn-border-green btn-block" ng-click="createAccount()"
             ng-show="showLoginWindow">צור
             משתמש חדש</button>
+        </div>
         </form>
     </div>
 </div>

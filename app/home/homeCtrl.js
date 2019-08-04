@@ -90,9 +90,10 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
             // this will wake in case the user resets his pw
             $location.path("/userPage");
             $scope.users.push(activeUser);
+            console.log("user sent reset Password reqest");
         }, function () {
             // this will wake up in case the user canceled the pw reset or prosess failed
-            console.log("user reset Password failed");
+            console.log("user canceled reset Password ");
         })
     };
    
