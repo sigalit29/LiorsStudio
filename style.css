@@ -91,7 +91,7 @@ h1, .media-body h2 {
     padding-bottom: 20px;
     max-height: 100%;
     width: 350px;
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 .login button, .photo-gallery-btn {
@@ -168,6 +168,14 @@ h1, .media-body h2 {
     background-color: rgb(104, 14, 187);
 }
 
+.rest-pw-txt{
+    text-align: right;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+.rset-modal-title{
+    font-weight: 900; 
+}
 
 .thead-users {
     line-height: 52px;
