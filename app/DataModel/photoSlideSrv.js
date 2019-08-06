@@ -8,7 +8,7 @@ app.factory("photoSlideSrv", function ($q) {
             this.image = parseSlide.get("image")._url;
         }
     }
-
+/**check if lastIndex is needed TBD */
     var lastIndex = 0;
 
     function getSlides() {

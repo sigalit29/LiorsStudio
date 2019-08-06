@@ -50,12 +50,16 @@ app.factory("userSrv", function ($q) {
     function getAllUsers() {
         
         var async = $q.defer();
-        const User = new Parse.User();
-        const query = new Parse.Query(User);
+        var allUsers = [];
+        const ParseUser = new Parse.User();
+        const query = new Parse.Query(ParseUser);
 
-        query.find().then((users) => {
-            console.log('Users found', users);
-            async.resolve(users);
+        query.find().then((results) => {
+            console.log('Users found', results)
+            for (let index = 0; index < results.length; index++) {
+                allUsers.push(new User(results[index]));                
+            }
+            async.resolve(allUsers);
         }, (error) => {
             console.error('Error while fetching user', error);
             async.reject(error);
