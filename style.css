@@ -158,14 +158,35 @@ h1, .media-body h2 {
 }
 
 .table-users {
-    table-layout: fixed;
+    /* table-layout: fixed; */
     color: rgb(235, 210, 210);
     border: none;
-    width: 60%;
-    font-size: 1.5em;
+    width: 55vh;
+    font-size: 1.3em;
 }
 .thead-users{
     background-color: rgb(104, 14, 187);
+}
+
+.thead-users {
+    line-height: 52px;
+}
+
+.th-users {
+    text-align: center;
+    line-height: 40px;
+    padding: 5px;
+}
+
+.td-users {
+    text-align: right;
+}
+
+.tr-users {
+    line-height: 42px;
+    padding: 12px;
+    box-shadow: 0px 6px 3px -5px rgba(26, 0, 0, 0.5);
+    text-align: center;
 }
 
 .rest-pw-txt{
@@ -175,27 +196,6 @@ h1, .media-body h2 {
 }
 .rset-modal-title{
     font-weight: 900; 
-}
-
-.thead-users {
-    line-height: 52px;
-}
-
-.th-users {
-    text-align: center;
-    line-height: 42px;
-    padding: 4px;
-}
-
-.td-users {
-    text-align: center;
-}
-
-.tr-users {
-    line-height: 42px;
-    padding: 15px;
-    box-shadow: 0px 6px 3px -5px rgba(26, 0, 0, 0.5);
-    text-align: center;
 }
 
 /*--- Weekly Activities --------------------*/
