@@ -10,6 +10,7 @@ app.factory("userSrv", function ($q) {
         this.lname = user.get("lname");
         this.email = user.get("email");
         this.phone = user.get("userPhone");
+        this.copyOfEmail = user.get("copyOfEmail");
     }
 
 
@@ -81,6 +82,7 @@ app.factory("userSrv", function ($q) {
         user.set('email', email);
         user.set('password', pwd);
         user.set('userPhone', phone);
+        user.set('copyOfEmail', email);
 
         user.signUp().then((user) => {
             activeUser = new User(user);
@@ -125,6 +127,7 @@ app.factory("userSrv", function ($q) {
                 // Updates the data we want
                 user.set('username', fullName);
                 user.set('email', email);
+                user.set('copyOfEmail',email);
                 user.set('fname', fname);
                 user.set('lname', lname);
                 user.set('userPhone', phone);
