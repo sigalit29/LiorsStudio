@@ -165,7 +165,7 @@ h1, .media-body h2 {
     /* table-layout: fixed; */
     color: rgb(235, 210, 210);
     border: none;
-    width: 56vh;
+    max-width: 50vh;
     font-size: 1.3em;
     margin-top: 20px;
     background-color:   rgb(69, 52, 83); 
