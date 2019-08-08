@@ -165,7 +165,7 @@ h1, .media-body h2 {
     /* table-layout: fixed; */
     color: rgb(235, 210, 210);
     border: none;
-    max-width: 50vh;
+    /* max-width: 50vh; */
     font-size: 1.3em;
     margin-top: 20px;
     background-color:   rgb(69, 52, 83); 
@@ -182,12 +182,12 @@ h1, .media-body h2 {
 .th-users {
     text-align: center;
     line-height: 40px;    
-    padding:0 15px 0 15px;
+    padding:0 8px 0 8px;
 }
 
 .td-users {
     text-align: right;
-    padding:0 15px 0 15px;    
+    padding:0 8px 0 8px;    
 }
 
 .tr-users {
