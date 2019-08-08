@@ -5,14 +5,18 @@
                 <th class="th-users">שם</th>
                 <th class="th-users">אימייל</th>
                 <th class="th-users">טלפון</th>
+                <th class="th-users">עריכה</th> 
+                <th class="th-users">מחיקה</th>
             </tr>
         </thead>
         <tbody>
             <tr class="tr-users" ng-click="" ng-repeat="user in users">
                 <td class="td-users small-cell">{{user.fullName}}</td>               
                 <td class="td-users large-cell">{{user.copyOfEmail}}</td>
-                <td class="td-users large-cell">{{user.phone}}</td>
+                <td class="td-users large-cell">{{user.phone}}</td> 
+                <td class="td-users small-cell"><img src="Images/edit-button-256.png" alt="edit" height="25px" width="25px"></td>  
+                <td class="td-users small-cell"><img src="Images/trash-256.png" alt="trash" height="25px" width="25px"></td>            
             </tr>
-        </tbody>
+        </tbody>   
     </table>
 </div>

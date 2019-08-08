@@ -43,8 +43,12 @@ h1, .media-body h2 {
     height: 70rem;
 }
 
-.user-img, .users-img {
+.user-img {
     background-image: url("Images/P3010006.jpg");
+}
+
+.users-img {
+    background-image: url("Images/P3010028.jpg");
 }
 
 .weekly-img {
@@ -149,7 +153,7 @@ h1, .media-body h2 {
 /*--- User page and login CSS's------------------------*/
 
 .user-buttons {
-    margin-top: 20vh;
+    margin-top: 25vh;
     margin-right: 10vh;
     color: rgb(235, 210, 210);
     margin: right;
@@ -163,28 +167,32 @@ h1, .media-body h2 {
     border: none;
     width: 56vh;
     font-size: 1.3em;
+    margin-top: 20px;
+    background-color:   rgb(69, 52, 83); 
+
 }
 .thead-users{
-    background-color: rgb(104, 14, 187);
+    background-color: rgb(124, 106, 141);
 }
 
 .thead-users {
-    line-height: 52px;
+    line-height: 52px;       
 }
 
 .th-users {
     text-align: center;
-    line-height: 40px;
-    padding: 5px;
+    line-height: 40px;    
+    padding:0 15px 0 15px;
 }
 
 .td-users {
     text-align: right;
+    padding:0 15px 0 15px;    
 }
 
 .tr-users {
     line-height: 42px;
-    padding: 12px;
+    padding: 12px;   
     box-shadow: 0px 6px 3px -5px rgba(26, 0, 0, 0.5);
     text-align: left;
 }
