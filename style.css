@@ -98,7 +98,7 @@ h1, .media-body h2 {
     font-size: 1.6em;
 }
 
-.login button, .photo-gallery-btn, .table-footer button {
+.login button, .photo-gallery-btn, .table-footer button, .price-box button{
     background: white;
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
