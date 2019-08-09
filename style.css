@@ -196,8 +196,9 @@ h1, .media-body h2 {
 }
 
 .table-footer button {
+    margin-top: 4px;
     color: rgb(69, 52, 83);
-    width: 150px;
+    width: 175px;
 }
 
 .rest-pw-txt {
