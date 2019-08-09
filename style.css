@@ -98,7 +98,7 @@ h1, .media-body h2 {
     font-size: 1.6em;
 }
 
-.login button, .photo-gallery-btn {
+.login button, .photo-gallery-btn, .table-footer button {
     background: white;
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
@@ -162,48 +162,52 @@ h1, .media-body h2 {
 }
 
 .table-users {
-    /* table-layout: fixed; */
     color: rgb(235, 210, 210);
     border: none;
-    /* max-width: 50vh; */
     font-size: 1.3em;
     margin-top: 20px;
-    background-color:   rgb(69, 52, 83); 
-
+    background-color: rgb(69, 52, 83);
 }
-.thead-users{
+
+.thead-users {
     background-color: rgb(124, 106, 141);
 }
 
 .thead-users {
-    line-height: 52px;       
+    line-height: 52px;
 }
 
 .th-users {
     text-align: center;
-    line-height: 40px;    
-    padding:0 8px 0 8px;
+    line-height: 40px;
+    padding: 0 8px 0 8px;
 }
 
 .td-users {
     text-align: right;
-    padding:0 8px 0 8px;    
+    padding: 0 8px 0 8px;
 }
 
 .tr-users {
     line-height: 42px;
-    padding: 12px;   
+    padding: 12px;
     box-shadow: 0px 6px 3px -5px rgba(26, 0, 0, 0.5);
     text-align: left;
 }
 
-.rest-pw-txt{
+.table-footer button {
+    color: rgb(69, 52, 83);
+    width: 150px;
+}
+
+.rest-pw-txt {
     text-align: right;
     font-size: 1.3em;
     font-weight: 300;
 }
-.rset-modal-title{
-    font-weight: 900; 
+
+.rset-modal-title {
+    font-weight: 900;
 }
 
 /*--- Weekly Activities --------------------*/
@@ -293,7 +297,7 @@ h1, .media-body h2 {
     margin-top: 2vh;
     margin-bottom: 2vh;
     margin-right: 2vh;
-    color: rgb(235, 210, 210);
+    color: rgb(71, 68, 68);
     margin: top;
     height: 3rem;
     width: 18rem;

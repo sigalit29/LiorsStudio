@@ -60,7 +60,7 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
       var max = getMaxIndex();
       newSlide.id = ++max;
       photoSlideSrv.addNewSlide(newSlide, newSlide.id).then(function (newSlide) {
-        $scope.slides.push(newSlide);       
+        $scope.slides.push(newSlide);
         IndexTheSlideArray(slides);
       });
     }, function () {
@@ -106,6 +106,9 @@ app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photo
 
   }
 
+  $scope.goToHomePage = function () {
+    $location.path("/");
+  }
 
 
 })

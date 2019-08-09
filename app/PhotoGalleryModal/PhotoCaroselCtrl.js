@@ -19,4 +19,5 @@ app.controller("photoCaroselCtrl", function ($scope, $location, $log, $uibModalI
         $uibModalInstance.dismiss();
     }
 
+    
 });
