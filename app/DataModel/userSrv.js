@@ -49,7 +49,7 @@ app.factory("userSrv", function ($q) {
 
 
     function getAllUsers() {
-        
+
         var async = $q.defer();
         var allUsers = [];
         const ParseUser = new Parse.User();
@@ -58,7 +58,7 @@ app.factory("userSrv", function ($q) {
         query.find().then((results) => {
             console.log('Users found', results)
             for (let index = 0; index < results.length; index++) {
-                allUsers.push(new User(results[index]));                
+                allUsers.push(new User(results[index]));
             }
             async.resolve(allUsers);
         }, (error) => {
@@ -110,8 +110,19 @@ app.factory("userSrv", function ($q) {
 
         return async.promise;
     }
-
-
+  
+       function deleteUser(userToDelete) {              
+        var async = $q.defer();         
+        console.log(userToDelete);
+        Parse.Cloud.run('deleteUser', {userId: userToDelete.usertId}).then(function (result) {
+            console.log("User removed" + result);
+            async.resolve(result); 
+        }).catch((error) => {
+            console.error('Error while removing user', error);
+            async.reject(error);
+        });
+        return async.promise;
+    }
 
     /*-- update exsisting user data service   -*/
     function updateUser(fname, lname, email, phone) {
@@ -127,7 +138,7 @@ app.factory("userSrv", function ($q) {
                 // Updates the data we want
                 user.set('username', fullName);
                 user.set('email', email);
-                user.set('copyOfEmail',email);
+                user.set('copyOfEmail', email);
                 user.set('fname', fname);
                 user.set('lname', lname);
                 user.set('userPhone', phone);
@@ -154,7 +165,8 @@ app.factory("userSrv", function ($q) {
         getAllUsers: getAllUsers,
         addNewUser: addNewUser,
         updateUser: updateUser,
-        resetUserPassword: resetUserPassword
+        resetUserPassword: resetUserPassword,
+        deleteUser: deleteUser
     }
 
 });

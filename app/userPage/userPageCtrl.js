@@ -22,13 +22,12 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
             }
         })
 
-
         modalInstance.result.then(function (User) {
-            // this will wake in case the user added a new recipe
+            // this will wake in case the user saved his data 
             console.log(User);
         }, function () {
-            // this will wake up in case the user canceled the new recipe
-            console.log("user canceled reset Password");
+            // this will wake up in case the user canceled the update
+            console.log("user canceled update");
         })
     };
 
