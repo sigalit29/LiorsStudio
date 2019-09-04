@@ -6,11 +6,11 @@ app.controller("signUpModalCtrl", function ($scope, $uibModalInstance, userSrv) 
     $scope.pwd = "";
     $scope.fname = "";
     $scope.lname = "";
-
+    $scope.userPhone = "";
 
     $scope.ok = function () {
        
-        userSrv.addNewUser($scope.fname, $scope.lname, $scope.email, $scope.pwd).then(function (newUser) {
+        userSrv.addNewUser($scope.fname, $scope.lname, $scope.email, $scope.pwd, $scope.userPhone).then(function (newUser) {
             $uibModalInstance.close(newUser);
         });
         

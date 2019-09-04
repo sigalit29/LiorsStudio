@@ -45,6 +45,10 @@ app.controller("usersTableCtrl", function ($scope, $location, $uibModal, userSrv
         userSrv.deleteUser(user).then(function (response) {
            console.log(response);
         });
+        /**update table after deleting a user */
+        userSrv.getAllUsers().then(function (users) {
+            $scope.users = users;
+        });
     }
 
 });
