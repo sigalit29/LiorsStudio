@@ -2,7 +2,6 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
 
     $scope.activeUser = userSrv.getActiveUser();
     $scope.userFname = $scope.activeUser.fname;
-    $scope.multipleEntryTicket = false;
     $scope.isAdmin = $scope.activeUser.isAdmin;
 
     $scope.updateUserData = function () {
@@ -25,6 +24,11 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
 
         modalInstance.result.then(function (User) {
             // this will wake in case the user saved his data 
+            $scope.userFname = User.get("fname");
+            $scope.activeUser.fname =  $scope.userFname;
+            $scope.activeUser.lname = User.get("lname");
+            $scope.activeUser.email = User.get("email");
+            $scope.activeUser.phone = User.get("userPhone");
             console.log(User);
         }, function () {
             // this will wake up in case the user canceled the update
@@ -34,6 +38,10 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
 
     $scope.GoToUsersTable = function () {
         $location.path("/usersTable");
+    }
+
+    $scope.goToHomePage = function () {
+        $location.path("/");
     }
 
 })

@@ -5,13 +5,13 @@
             <div class="form-group user-buttons">
                 <button type="button" class="btn btn-success btn-block" ng-click="updateUserData()">עדכון פרטים
                     אישיים</button>
-             
-                <br>
                 <div ng-if="isAdmin" class="admin-only">
+                    <br>
                     <button type="button" class="btn btn-success btn-block" ng-click="GoToUsersTable()">עדכון כול
                         המשתמשים</button>
                 </div>
-   
+                <br>
+                <button type="button" class="btn btn-success btn-block" ng-click="goToHomePage()">חזרה לדף הבית</button>
         </form>
     </div>
 </div>
