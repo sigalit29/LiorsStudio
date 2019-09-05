@@ -11,6 +11,7 @@ app.factory("userSrv", function ($q) {
         this.email = user.get("email");
         this.phone = user.get("userPhone");
         this.copyOfEmail = user.get("copyOfEmail");
+        this.isAdmin = user.get("isAdmin");
     }
 
 

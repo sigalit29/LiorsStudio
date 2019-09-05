@@ -3,6 +3,7 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
     $scope.activeUser = userSrv.getActiveUser();
     $scope.userFname = $scope.activeUser.fname;
     $scope.multipleEntryTicket = false;
+    $scope.isAdmin = $scope.activeUser.isAdmin;
 
     $scope.updateUserData = function () {
         $scope.email = "";
