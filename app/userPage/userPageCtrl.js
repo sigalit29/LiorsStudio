@@ -16,7 +16,9 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
                         fname: $scope.activeUser.fname,
                         lname: $scope.activeUser.lname,
                         email: $scope.activeUser.email,
-                        phone: $scope.activeUser.phone
+                        phone: $scope.activeUser.phone,
+                        isOtherUser: false,
+                        userId: $scope.activeUser.userId
                     };
                 }
             }

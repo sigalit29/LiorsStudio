@@ -1,0 +1,14 @@
+<div class="deltete-user-modal">
+    <div class="row">
+        <div class="user-delete-msg" ng-model="fullName">
+            <br> את בטוחה שאת רוצה למחוק <br> את המשתמש {{fullName}}
+        </div>
+
+        <hr>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-danger float-right" ng-click="deleteConfirmed()"> מחק משתמש
+            <button type="button" class="btn btn-info float-left" ng-click="deleteCancelled()"> בטל מחיקה
+        </div>
+
+    </div>
+</div>

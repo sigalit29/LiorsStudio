@@ -111,13 +111,13 @@ app.factory("userSrv", function ($q) {
 
         return async.promise;
     }
-  
-       function deleteUser(userToDelete) {              
-        var async = $q.defer();         
+
+    function deleteUser(userToDelete) {
+        var async = $q.defer();
         console.log(userToDelete);
-        Parse.Cloud.run('deleteUser', {userId: userToDelete.usertId}).then(function (result) {
+        Parse.Cloud.run('deleteUser', { userId: userToDelete.usertId }).then(function (result) {
             console.log("User removed" + result);
-            async.resolve(result); 
+            async.resolve(result);
         }).catch((error) => {
             console.error('Error while removing user', error);
             async.reject(error);
@@ -157,6 +157,30 @@ app.factory("userSrv", function ($q) {
         return async.promise;
     }
 
+    /*-- admin update of users */
+    function updateOtherUser(userToUpdate) {
+        var async = $q.defer();
+        var fullName = userToUpdate.fname + ' ' + userToUpdate.lname;
+
+        Parse.Cloud.run('updateUserById',
+            {
+                userId: userToUpdate.usertId,                   
+                fname: userToUpdate.fname,
+                lname: userToUpdate.lname,
+                email: userToUpdate.email,                
+                userPhone: userToUpdate.userPhone,
+                username: fullName
+
+            }).then(function (result) {
+                console.log("User updated" + result);
+                async.resolve(result);
+            }).catch((error) => {
+                console.error('Error while updating user', error);
+                async.reject(error);
+            });
+
+        return async.promise;
+    }
 
     return {
         isLoggedIn: isLoggedIn,
@@ -167,7 +191,8 @@ app.factory("userSrv", function ($q) {
         addNewUser: addNewUser,
         updateUser: updateUser,
         resetUserPassword: resetUserPassword,
-        deleteUser: deleteUser
+        deleteUser: deleteUser,
+        updateOtherUser: updateOtherUser
     }
 
 });

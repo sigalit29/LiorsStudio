@@ -98,8 +98,8 @@ h1, .media-body h2 {
     font-size: 1.6em;
 }
 
-.login button, .photo-gallery-btn, .table-footer button, .price-box button{
-    background:  rgb(253, 253, 253);
+.login button, .photo-gallery-btn, .table-footer button, .price-box button {
+    background: rgb(253, 253, 253);
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
     border-radius: 28px;
@@ -327,12 +327,19 @@ h1, .media-body h2 {
     max-width: 25%;
 }
 
-.delete-msg {
+.delete-msg, .user-delete-msg {
     letter-spacing: 1.5px;
     font-size: 1.5em;
     text-align: center;
     font-weight: bold;
     color: rgb(235, 210, 210);
+}
+
+.user-delete-msg{
+    padding-right: 25%;
+}
+.deltete-user-modal{
+background-color: rgb(175, 126, 126);
 }
 
 #user-text {
@@ -387,4 +394,3 @@ h1, .media-body h2 {
     font-weight: 600;
     text-align: right;
 }
-
