@@ -14,7 +14,9 @@ app.controller("updateModalCtrl", function ($scope, $uibModalInstance, userSrv) 
 
     $scope.ok = function () {
         if (userData.isOtherUser) {
-            userSrv.updateOtherUser(userData);
+            userSrv.updateOtherUser(userData).then(function (newUser) {
+                $uibModalInstance.close(newUser);
+            });
         } else {
             userSrv.updateUser($scope.fname, $scope.lname, $scope.email, $scope.phone).then(function (newUser) {
                 $uibModalInstance.close(newUser);

@@ -4,7 +4,7 @@ app.factory("userSrv", function ($q) {
     var activeUser = null;
 
     function User(user) {
-        this.usertId = user.id;
+        this.userId = user.id;
         this.fullName = user.get("username");
         this.fname = user.get("fname");
         this.lname = user.get("lname");
@@ -115,7 +115,8 @@ app.factory("userSrv", function ($q) {
     function deleteUser(userToDelete) {
         var async = $q.defer();
         console.log(userToDelete);
-        Parse.Cloud.run('deleteUser', { userId: userToDelete.usertId }).then(function (result) {
+        Parse.Cloud.run('deleteUser', { userId: userToDelete.userId 
+        }).then(function (result) {
             console.log("User removed" + result);
             async.resolve(result);
         }).catch((error) => {
@@ -135,7 +136,7 @@ app.factory("userSrv", function ($q) {
 
         if (isLoggedIn()) {
             // Finds the user by its ID
-            query.get(activeUser.usertId).then((user) => {
+            query.get(activeUser.userId).then((user) => {
                 // Updates the data we want
                 user.set('username', fullName);
                 user.set('email', email);
@@ -164,7 +165,7 @@ app.factory("userSrv", function ($q) {
 
         Parse.Cloud.run('updateUserById',
             {
-                userId: userToUpdate.usertId,                   
+                userId: userToUpdate.userId,                   
                 fname: userToUpdate.fname,
                 lname: userToUpdate.lname,
                 email: userToUpdate.email,                
