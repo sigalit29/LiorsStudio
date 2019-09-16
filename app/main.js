@@ -22,7 +22,7 @@ Parse.Cloud.define("updateUserById", function (request, response) {
     var phone = request.params.userPhone;
     query.get(request.params.userId, { useMasterKey: true }).then(user => {
         // Updates the data we want
-        user.set('username', "בדיקה", { useMasterKey: true });
+        user.set('username',fullName , { useMasterKey: true });
         user.set('email', email, { useMasterKey: true });
         user.set('copyOfEmail', email, { useMasterKey: true });
         user.set('fname', fname, { useMasterKey: true } );

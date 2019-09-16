@@ -162,16 +162,9 @@ app.factory("userSrv", function ($q) {
     function updateOtherUser(userToUpdate) {
         var async = $q.defer();
         var fullName = userToUpdate.fname + ' ' + userToUpdate.lname;
-
         Parse.Cloud.run('updateUserById',
-            {
-                userId: userToUpdate.userId,                   
-                fname: userToUpdate.fname,
-                lname: userToUpdate.lname,
-                email: userToUpdate.email,                
-                userPhone: userToUpdate.userPhone,
-                username: fullName
-
+            { userId: userToUpdate.userId, fname: userToUpdate.fname, lname: userToUpdate.lname,
+              email: userToUpdate.email, userPhone: userToUpdate.userPhone, username: fullName
             }).then(function (result) {
                 console.log("User updated" + result);
                 async.resolve(result);
