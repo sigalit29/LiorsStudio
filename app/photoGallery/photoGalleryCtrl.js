@@ -1,8 +1,10 @@
-app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photoSlideSrv) {
+app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photoSlideSrv, userSrv) {
 
+  $scope.activeUser = userSrv.getActiveUser();
+  $scope.isAdmin = $scope.activeUser.isAdmin;
 
   var slides = $scope.slides = [];
-  var currIndex = $scope.currIndex = 0;
+  $scope.currIndex = 0;
 
   $scope.activeSlide = 0;
   $scope.myInterval = 5000;

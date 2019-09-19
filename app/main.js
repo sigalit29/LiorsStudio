@@ -13,6 +13,7 @@ Parse.Cloud.define("deleteUser", function (request, response) {
     });
 });
 
+
 Parse.Cloud.define("updateUserById", function (request, response) {
     var query = new Parse.Query(Parse.User);
     var fullName = request.params.username;
