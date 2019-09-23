@@ -1,6 +1,5 @@
 app.controller("workshopsCtrl", function($scope, $rootScope, $location, $log, userSrv) {
 
-    $rootScope.isNew = '';
    
     userSrv.clearWorkshopAlert().then(function (newWorkshopAlertOn) {
         $rootScope.isNew = '';

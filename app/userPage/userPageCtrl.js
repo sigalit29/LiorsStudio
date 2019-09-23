@@ -4,13 +4,9 @@ app.controller("userPageCtrl", function ($scope, $rootScope, $location, $uibModa
     $scope.userFname = $scope.activeUser.fname;
     $scope.isAdmin = $scope.activeUser.isAdmin;
 
-
-
     /** update new workshop alert status for user */
     $rootScope.isNew = ($scope.activeUser.newWorkshopAlertOn == false) ? '' : 'blinking';
-    $rootScope.firstTimeInPage = false;
-
-
+   
     $scope.updateUserData = function () {
         $scope.email = "";
         $scope.pwd = "";
