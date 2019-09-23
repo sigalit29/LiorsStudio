@@ -12,6 +12,7 @@ app.factory("userSrv", function ($q) {
         this.phone = user.get("userPhone");
         this.copyOfEmail = user.get("copyOfEmail");
         this.isAdmin = user.get("isAdmin");
+        this.newWorkshopAlertOn = user.get('newWorkshopAlertOn');
     }
 
 
@@ -84,7 +85,7 @@ app.factory("userSrv", function ($q) {
         user.set('password', pwd);
         user.set('userPhone', phone);
         user.set('copyOfEmail', email);
-
+        user.set('newWorkshopAlertOn', true);
         user.signUp().then((user) => {
             activeUser = new User(user);
             async.resolve(activeUser);
@@ -126,6 +127,34 @@ app.factory("userSrv", function ($q) {
         return async.promise;
     }
 
+/**
+ * Clear the blinking and new icon from menu after user enters the workshop page
+ */
+    function clearWorkshopAlert(){
+        var async = $q.defer();
+        const User = new Parse.User();
+        const query = new Parse.Query(User);
+
+        if (isLoggedIn()) {
+            // Finds the user by its ID
+            query.get(activeUser.userId).then((user) => {
+                // Updates the data we want
+                user.set('newWorkshopAlertOn', false);               
+                // Saves the user with the updated data
+                user.save().then((response) => {
+                    console.log('Updated user newWorkshopAlertOn', response);
+                    async.resolve(response.newWorkshopAlertOn);
+                }).catch((error) => {
+                    console.error('Error while updating users newWorkshopAlertOn', error);
+                    async.reject(error);
+
+                });
+            });
+        }
+        return async.promise;
+    }
+
+    
     /*-- update exsisting user data service   -*/
     function updateUser(fname, lname, email, phone) {
         var async = $q.defer();
@@ -186,7 +215,8 @@ app.factory("userSrv", function ($q) {
         updateUser: updateUser,
         resetUserPassword: resetUserPassword,
         deleteUser: deleteUser,
-        updateOtherUser: updateOtherUser
+        updateOtherUser: updateOtherUser,
+        clearWorkshopAlert: clearWorkshopAlert
     }
 
 });

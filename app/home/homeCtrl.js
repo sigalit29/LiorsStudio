@@ -7,15 +7,14 @@ app.controller("homeCtrl", function ($scope, $rootScope, $location, $log, $uibMo
     $scope.pwd;
     $scope.activeUser = undefined;
     $scope.users = [];
-    $rootScope.isNew = 'blinking';
+
 
     /** If user is logged in Go to new page - user page on Home logo */
     $scope.activeUser = userSrv.getActiveUser();
-    
+
     if ($scope.activeUser) {
         $scope.showLoginWindow = false;
         $scope.showLogoutButton = true;
-
     } else {
         $scope.showLoginWindow = true;
         $scope.showLogoutButton = false;
@@ -97,7 +96,7 @@ app.controller("homeCtrl", function ($scope, $rootScope, $location, $log, $uibMo
             console.log("user canceled reset Password ");
         })
     };
-   
+
 
 
     /** call this function to remove valus form email and pw */

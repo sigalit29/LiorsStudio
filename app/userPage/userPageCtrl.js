@@ -1,8 +1,11 @@
-app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) {
+app.controller("userPageCtrl", function ($scope, $rootScope, $location, $uibModal, userSrv) {
 
     $scope.activeUser = userSrv.getActiveUser();
     $scope.userFname = $scope.activeUser.fname;
     $scope.isAdmin = $scope.activeUser.isAdmin;
+
+    /** update new workshop alert status for user */
+    $rootScope.isNew = ($scope.activeUser.newWorkshopAlertOn == false) ? '' : 'blinking';
 
     $scope.updateUserData = function () {
         $scope.email = "";
@@ -27,7 +30,7 @@ app.controller("userPageCtrl", function ($scope, $location, $uibModal, userSrv) 
         modalInstance.result.then(function (User) {
             // this will wake in case the user saved his data 
             $scope.userFname = User.get("fname");
-            $scope.activeUser.fname =  $scope.userFname;
+            $scope.activeUser.fname = $scope.userFname;
             $scope.activeUser.lname = User.get("lname");
             $scope.activeUser.email = User.get("email");
             $scope.activeUser.phone = User.get("userPhone");

@@ -38,6 +38,10 @@ app.controller("usersTableCtrl", function ($scope, $location, $uibModal, userSrv
         modalInstance.result.then(function (User) {
             // this will wake in case the user saved his data 
             console.log("UpdateUser when isOtherUser == true "+User);
+             /**update table after deleting a user */
+             userSrv.getAllUsers().then(function (users) {
+                $scope.users = users;
+            });
         }, function () {
             // this will wake up in case the user canceled the update
             console.log("user canceled update");
