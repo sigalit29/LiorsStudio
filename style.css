@@ -433,3 +433,16 @@ h1, .media-body h2 {
     font-weight: 600;
     text-align: right;
 }
+
+/* blinking */
+
+.blinking{
+    animation:blinkingText 0.9s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}

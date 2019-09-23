@@ -1,4 +1,4 @@
-app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv) {
+app.controller("homeCtrl", function ($scope, $rootScope, $location, $log, $uibModal, userSrv) {
 
     $scope.invalidLogin;
     $scope.showLoginWindow;
@@ -7,6 +7,7 @@ app.controller("homeCtrl", function ($scope, $location, $log, $uibModal, userSrv
     $scope.pwd;
     $scope.activeUser = undefined;
     $scope.users = [];
+    $rootScope.isNew = 'blinking';
 
     /** If user is logged in Go to new page - user page on Home logo */
     $scope.activeUser = userSrv.getActiveUser();
