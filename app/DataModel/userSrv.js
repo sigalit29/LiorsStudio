@@ -143,6 +143,7 @@ app.factory("userSrv", function ($q) {
                 // Saves the user with the updated data
                 user.save().then((response) => {
                     console.log('Updated user newWorkshopAlertOn', response);
+                    activeUser.newWorkshopAlertOn = false;
                     async.resolve(response.newWorkshopAlertOn);
                 }).catch((error) => {
                     console.error('Error while updating users newWorkshopAlertOn', error);
