@@ -6,5 +6,7 @@ app.controller("workshopsCtrl", function($scope, $rootScope, $location, $log, us
         $log.info("Clearing the blinking and new icon from menu after user enters the workshop page");
     });
 
-
+    $scope.goToHomePage = function () {
+        $location.path("/");
+    }
 })

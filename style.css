@@ -85,6 +85,8 @@ h1, .media-body h2 {
     font-size: 0.9em;
 }
 
+
+
 /*--- Home page and login CSS's------------------------*/
 
 .login, .price-list-content {
@@ -100,7 +102,7 @@ h1, .media-body h2 {
     font-size: 1.6em;
 }
 
-.login button, .photo-gallery-btn, .table-footer button, .price-box button, .tracher-text > button {
+.login button, .photo-gallery-btn, .table-footer button, .price-box button, .teacher-text > button, .teachers-img > button , .teachers-btn > button, .workshop-btn > button{
     background: rgb(253, 253, 253);
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
@@ -110,6 +112,13 @@ h1, .media-body h2 {
     -moz-box-shadow: 6px 5px 24px #666666;
     box-shadow: 6px 5px 24px #666666;
     font-weight: 600;
+}
+.teachers-btn > button, .workshop-btn > button{
+    color: rgb(69, 52, 83);
+    font-size: 1.1em;
+    height: 50px;
+    width: 140px;
+    margin-right: 5vh;
 }
 
 .btn:hover {
@@ -197,11 +206,13 @@ h1, .media-body h2 {
     text-align: left;
 }
 
-.table-footer button , .tracher-text > button{
+.table-footer button , .teacher-text > button {
     margin-top: 4px;
     color: rgb(69, 52, 83);
     width: 175px;
 }
+
+
 
 .rest-pw-txt {
     text-align: right;
@@ -300,22 +311,22 @@ h1, .media-body h2 {
     font-size: 1.5em; 
 }
 
-.tracher-text{
+.teacher-text{
     padding: 15px;
     background-color: rgb(124, 106, 141);
     width:75%;
    
 }
-.tracher-text > h1 {
+.teacher-text > h1 {
     color: rgb(235, 210, 210);
     font-size: 1.9fcem;
 }
 
-.tracher-text > h4 {
+.teacher-text > h4 {
     font-weight: bold; 
 }
 
-.tracher-text > ul >li {
+.teacher-text > ul >li {
     font-size: 1.4em;
     color: rgb(71, 68, 68);
     font-weight: bold; 
