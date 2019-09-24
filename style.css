@@ -321,6 +321,13 @@ h1, .media-body h2 {
     font-weight: bold; 
 }
 
+.card-text{
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.2em;
+    color:  rgb(61, 54, 82);
+}
+
 /*--- Photo Gallery page CSS's------------------------*/
 
 .photo-gallery {
