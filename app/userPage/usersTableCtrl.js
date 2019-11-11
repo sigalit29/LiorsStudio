@@ -14,6 +14,10 @@ app.controller("usersTableCtrl", function ($scope, $location, $uibModal, userSrv
         $location.path("/");
     }
 
+    /** /this function was called from an edit icon in the table
+     *  I tried to make it work with a server function with out sucess, 
+     *  Disabled from use at this point users can only updated thier own detailes 
+     */
     $scope.goToUpdateUser = function (user) {
         $scope.email = "";
         $scope.pwd = "";
