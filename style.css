@@ -240,9 +240,6 @@ h1, .media-body h2 {
     width: 70%;
     margin: auto;
 }
-/* .weekly-updates>h2{
-    color: rgb(49, 49, 48);
-} */
 
 .inner-weekly-text {
     font-weight: bold;
@@ -253,6 +250,8 @@ h1, .media-body h2 {
     width: 60%;
     max-height: 30%;
     margin: auto;
+    background-color:rgb(107, 90, 90);
+    border:  1mm ridge rgb(69, 52, 83);
 }
 
 .modal-activity-text {
