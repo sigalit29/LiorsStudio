@@ -2,7 +2,13 @@ app.controller("userPageCtrl", function ($scope, $rootScope, $location, $uibModa
 
     $scope.activeUser = userSrv.getActiveUser();
     $scope.userFname = $scope.activeUser.fname;
-    $scope.isAdmin = $scope.activeUser.isAdmin;
+    if($scope.activeUser){
+        $scope.isAdmin = $scope.activeUser.isAdmin;        
+      }
+      else{
+        $scope.isAdmin = false;
+      }     
+    
 
     /** update new workshop alert status for user */
     $rootScope.isNew = ($scope.activeUser.newWorkshopAlertOn == false) ? '' : 'blinking';

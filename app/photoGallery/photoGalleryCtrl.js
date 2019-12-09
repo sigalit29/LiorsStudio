@@ -1,7 +1,12 @@
 app.controller("photoGalleryCtrl", function ($scope, $location, $uibModal, photoSlideSrv, userSrv) {
 
   $scope.activeUser = userSrv.getActiveUser();
-  $scope.isAdmin = $scope.activeUser.isAdmin;
+  if($scope.activeUser){
+    $scope.isAdmin = $scope.activeUser.isAdmin;
+  }
+  else{
+    $scope.isAdmin = false;
+  }
 
   var slides = $scope.slides = [];
   $scope.currIndex = 0;

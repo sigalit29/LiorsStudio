@@ -3,7 +3,14 @@ app.controller("weeklyActivityCtrl", function ($scope, $uibModal, weeklyActivity
     $scope.userText = "";
     $scope.weeklyImage = "";
     $scope.activeUser = userSrv.getActiveUser();
-    $scope.isAdmin = $scope.activeUser.isAdmin;
+    if ($scope.activeUser) {
+        $scope.isAdmin = $scope.activeUser.isAdmin;
+    }
+    else {
+        $scope.isAdmin = false;
+    }
+
+
     $scope.isWeeklyActivityUpdatedFromParseDb = false;
 
     /** First time run get all gallary slides from the Parse DB (Back4app) */
