@@ -60,9 +60,11 @@ h1, .media-body h2 {
 .teachers-img {
     background-image: url("Images/P3288406.jpg");
 }
+
 .lior-img {
     background-image: url("Images/TreeAndFlowers.jpg");
 }
+
 .price-img {
     background-image: url("Images/P3288410.jpg");
 }
@@ -85,8 +87,6 @@ h1, .media-body h2 {
     font-size: 0.9em;
 }
 
-
-
 /*--- Home page and login CSS's------------------------*/
 
 .login, .price-list-content {
@@ -102,7 +102,7 @@ h1, .media-body h2 {
     font-size: 1.6em;
 }
 
-.login button, .photo-gallery-btn, .table-footer button, .price-box button, .teacher-text > button, .teachers-img > button , .teachers-btn > button, .workshop-btn > button{
+.login button, .photo-gallery-btn, .table-footer button, .price-box button, .teacher-text>button, .teachers-img>button, .teachers-btn>button, .workshop-btn>button {
     background: rgb(253, 253, 253);
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
@@ -113,7 +113,8 @@ h1, .media-body h2 {
     box-shadow: 6px 5px 24px #666666;
     font-weight: 600;
 }
-.teachers-btn > button, .workshop-btn > button{
+
+.teachers-btn>button, .workshop-btn>button {
     color: rgb(69, 52, 83);
     font-size: 1.1em;
     height: 50px;
@@ -206,13 +207,11 @@ h1, .media-body h2 {
     text-align: left;
 }
 
-.table-footer button , .teacher-text > button {
+.table-footer button, .teacher-text>button {
     margin-top: 4px;
     color: rgb(69, 52, 83);
     width: 175px;
 }
-
-
 
 .rest-pw-txt {
     text-align: right;
@@ -250,8 +249,8 @@ h1, .media-body h2 {
     width: 60%;
     max-height: 30%;
     margin: auto;
-    background-color:rgb(107, 90, 90);
-    border:  1mm ridge rgb(69, 52, 83);
+    background-color: rgb(107, 90, 90);
+    border: 1mm ridge rgb(69, 52, 83);
 }
 
 .modal-activity-text {
@@ -304,41 +303,40 @@ h1, .media-body h2 {
     margin-top: 1.3vh;
     margin-right: 2rem;
     margin-left: 2rem;
-   
 }
 
 .card-title {
     font-weight: bold;
     text-align: center;
-    font-size: 1.5em; 
+    font-size: 1.5em;
 }
 
-.teacher-text{
+.teacher-text {
     padding: 15px;
     background-color: rgb(124, 106, 141);
-    width:75%;
-   
+    width: 75%;
 }
-.teacher-text > h1 {
+
+.teacher-text>h1 {
     color: rgb(235, 210, 210);
     font-size: 1.9fcem;
 }
 
-.teacher-text > h4 {
-    font-weight: bold; 
+.teacher-text>h4 {
+    font-weight: bold;
 }
 
-.teacher-text > ul >li {
+.teacher-text>ul>li {
     font-size: 1.4em;
     color: rgb(71, 68, 68);
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-.card-text{
+.card-text {
     text-align: center;
     font-weight: 900;
     font-size: 1.2em;
-    color:  rgb(61, 54, 82);
+    color: rgb(61, 54, 82);
 }
 
 /*--- Photo Gallery page CSS's------------------------*/
@@ -422,10 +420,7 @@ h1, .media-body h2 {
 }
 
 .work-shop-img {
-    /* max-width:568px; */
-    /* max-width: 462px; */
-    max-width: 30%;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .work-shop-media {
@@ -456,13 +451,24 @@ h1, .media-body h2 {
 
 /* blinking */
 
-.blinking{
-    animation:blinkingText 0.9s infinite;
+.blinking {
+    animation: blinkingText 0.9s infinite;
 }
-@keyframes blinkingText{
-    0%{     color: #000;    }
-    49%{    color: transparent; }
-    50%{    color: transparent; }
-    99%{    color:transparent;  }
-    100%{   color: #000;    }
+
+@keyframes blinkingText {
+    0% {
+        color: #000;
+    }
+    49% {
+        color: transparent;
+    }
+    50% {
+        color: transparent;
+    }
+    99% {
+        color: transparent;
+    }
+    100% {
+        color: #000;
+    }
 }
