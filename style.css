@@ -314,7 +314,7 @@ h1, .media-body h2 {
 .teacher-text {
     padding: 15px;
     background-color: rgb(124, 106, 141);
- 
+    max-width: 99%;
 }
 
 .teacher-text>h1 {
