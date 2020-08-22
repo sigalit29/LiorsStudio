@@ -43,12 +43,12 @@ h1, .media-body h2 {
     height: 70rem;
 }
 
-.user-img {
-    background-image: url("Images/P3010006.jpg");
+.user-img {   
+    background-image: url("Images/DSC_0816.jpg");
 }
 
 .users-img {
-    background-image: url("Images/P3010028.jpg");
+    background-image: url("Images/DSC_0816.jpg");
 }
 
 .weekly-img {  
@@ -67,6 +67,10 @@ h1, .media-body h2 {
 
 .price-img {
     background-image: url("Images/DSC_6038.jpg");
+}
+
+.work-shop-media {
+    background-image: url("Images/DSC_0819.jpg");
 }
 
 /*--- NavBar CSS's------------------------*/
@@ -431,7 +435,8 @@ h1, .media-body h2 {
 /*--------------price list----------------*/
 
 .price-list-content {
-    float:left;
+    float:right;
+    margin:auto;
 }
 
 .price-list-content>p {
