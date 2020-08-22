@@ -36,7 +36,7 @@ h1, .media-body h2 {
 .landing-img, .user-img, .weekly-img, .price-img, .users-img, .teachers-img, .lior-img {
     padding-top: 35px;
     margin-bottom: auto;
-    background-image: url("Images/LandingImgOrigin.jpg");
+    background-image: url("../Images/DSC_6057.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     padding-right: 3px;
@@ -51,22 +51,22 @@ h1, .media-body h2 {
     background-image: url("Images/P3010028.jpg");
 }
 
-.weekly-img {
-    background-image: url("Images/P3288273.jpg");
+.weekly-img {  
+    background-image: url("Images/DSC_0974.jpg");
     padding: 0!important;
     margin: 0!important;
 }
 
-.teachers-img {
-    background-image: url("Images/P3288406.jpg");
+.teachers-img { 
+    background-image: url("Images/DSC_0819.jpg");
 }
 
-.lior-img {
-    background-image: url("Images/TreeAndFlowers.jpg");
+.lior-img { 
+    background-image: url("Images/DSC_0822.jpg");
 }
 
 .price-img {
-    background-image: url("Images/P3288410.jpg");
+    background-image: url("Images/DSC_6038.jpg");
 }
 
 /*--- NavBar CSS's------------------------*/
@@ -98,7 +98,7 @@ h1, .media-body h2 {
     padding-left: 20px;
     padding-bottom: 20px;
     max-height: 100%;
-    width: 310px;
+    width: 410px;
     font-size: 1.6em;
 }
 
@@ -290,12 +290,13 @@ h1, .media-body h2 {
     padding-top: 2rem;
     padding-bottom: 2rem;
     max-width: 20rem;
-    margin: auto;
+    margin: auto;  
 }
 
+
 .card-body {
-    padding: 10px;
-    text-decoration: none;
+    padding: 2px;
+    text-decoration: none;    
 }
 
 .teacher-card {
@@ -313,7 +314,6 @@ h1, .media-body h2 {
 
 .teacher-text {
     padding: 15px;
-    background-color: rgb(124, 106, 141);
     max-width: 99%;
 }
 
@@ -431,7 +431,7 @@ h1, .media-body h2 {
 /*--------------price list----------------*/
 
 .price-list-content {
-    margin: auto;
+    float:left;
 }
 
 .price-list-content>p {
