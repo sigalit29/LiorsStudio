@@ -46,7 +46,7 @@ h1, .media-body h2 {
 .landing-img, .user-img, .weekly-img, .price-img, .users-img, .teachers-img, .lior-img {
     padding-top: 35px;
     margin-bottom: auto;
-    background-image: url("../Images/DSC_6057.jpg");
+    background-image: url("Images/DSC_6057.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     padding-right: 3px;
